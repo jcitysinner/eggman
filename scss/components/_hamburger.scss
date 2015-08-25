@@ -1,0 +1,116 @@
+
+
+
+.menu-toggle {
+  $width: 15;
+  $spaceing: 3;
+  $thick: 2;
+  $color: $black;
+  $hover: tint($color, 50%);
+  $mathimatical: ($thick * 3) + ($spaceing * 2);
+
+  font-size: .1px;
+  cursor: pointer;  
+  color: $black;
+  letter-spacing: 0;
+  font-weight: $book; 
+  text-transform: uppercase;
+  display: block;
+  width: $width + px;
+  text-align: left;
+  white-space: nowrap;
+  margin: 0;
+  box-sizing: content-box;
+  z-index: 10001;
+  line-height: $mathimatical + px;
+  height: $mathimatical + px;
+  vertical-align: middle;
+  display: inline-block;
+
+  margin-right: 7px;
+
+  @include breakpoint(tablet-portrait-min) {
+    display: none;
+  }
+
+  &:hover {
+    >span, 
+    >span:before,  
+    >span:after {
+      background: $hover;
+    }
+  }
+
+  strong { 
+    display: none; 
+  }
+  
+  >span {
+    position: relative;
+    top: .01em;     
+    margin-right: 0;
+  }
+  
+  span {  
+    margin-right: 15px; 
+    vertical-align: middle;
+  }
+    
+
+  
+  >span, 
+  >span:before,  
+  >span:after {
+    @include transition (
+      background 500ms linear, 
+      transform .3s linear, 
+      top .3s linear .5s, 
+      bottom .3s linear .5s);
+    
+    @include transform-style(preserve-3d);
+    height: $thick + px;
+    width: $width + px;
+    border-radius: 0;
+    cursor: pointer;
+    background: $black;
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  >span:before,  
+  >span:after {
+    position: absolute;
+    left: 0;
+  }
+  
+  >span:before { 
+    top: -$spaceing - $thick + px;  
+  }
+
+  >span:after { 
+    bottom: -$spaceing - $thick + px;
+  }
+
+  &.active >span:before { @include transform(rotate(45deg)); top: 0; background: $color; }
+
+  &.active >span:after { @include transform(rotate(-45deg)); bottom: 0; background: $color; }
+
+  &.active >span { background: transparent;}  
+
+
+  &.active >span, 
+  &.active >span:before,  
+  &.active >span:after {
+    @include transition (
+      background 200ms linear, 
+      transform .3s linear .6s, 
+      top .3s linear .15s, 
+      bottom .3s linear .15s);
+  }
+
+
+} /*#menu-toggle*/
+    
+  
+
