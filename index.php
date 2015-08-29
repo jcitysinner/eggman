@@ -7,7 +7,7 @@
   <div class='menu-section'>
     <div class='wrapper'>
     <h2>Today's Menu</h2>
-      <div class='menu-wrap'>
+      <div class='menu-wrap'> 
         <div class='menu'>
           <div class='item'>
             <div class='img-wrap'><img class='' src="img/raster/compressed/egg1.jpg"></div>
@@ -106,17 +106,16 @@
           <p>The chefs that prepare your food at The EggMan food truck are all experts at their craft who want nothing more than for you to chow down on a delicious breakfast.</p>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class='team-section'>
-    <div class='wrapper'>
-      <img class='' src="http://placehold.it/137x242">
-      <div class='team-copy'>
-        <h2>Our Eggselent Team</h2>
-        <p>Only the best of the best get to work aboard the Eggman food truck!</p>
+      <div class='team-section'>
+        <img class='' src="img/raster/compressed/chef.png">
+        <div class='team-copy'>
+          <h2>Our Eggselent Team</h2>
+          <p>Only the best of the best get to work aboard the Eggman food truck!</p>
+        </div>
+        <a href='#'>Meet the Team</a>
       </div>
-      <a href='#'>Meet the Team</a>
+
     </div>
   </div>
 
@@ -128,31 +127,31 @@
         <a href='#'>Contact Us</a>
       </div>
       <div class='images'>
-        <img class='' src="http://placehold.it/350x150">
-        <img class='' src="http://placehold.it/350x150">
-        <img class='' src="http://placehold.it/350x150">
-        <img class='' src="http://placehold.it/350x150">
+        <img class='' src="http://placehold.it/350x350">
+        <img class='' src="http://placehold.it/350x250">
+        <img class='' src="http://placehold.it/350x350">
+        <img class='' src="http://placehold.it/350x250">
       </div>
     </div>
   </div>
 
   <div class='social-section'>
     <div class='wrapper'>
-      <div class='instagram-post'>
+      <div class='instagram-post social'>
         <img class='' src="http://placehold.it/300x300">
       </div>
-      <div class='twitter-post'>
+      <div class='twitter-post social'>
         <img src="http://placehold.it/300x300">
         <p>Not joking when I say @TheEggmanCanada was the BEST meal we had while visiting Toronto.</p>
         <svg class='twitter-icon'><use xlink:href="#twitter-icon"></use></svg>
       </div>
-      <div class='instagram-post'>
+      <div class='instagram-post social'>
         <img class='' src="http://placehold.it/300x300">
       </div>
-      <div class='instagram-post'>
+      <div class='instagram-post social'>
         <img class='' src="http://placehold.it/300x300">
       </div>
-      <div class='instagram-post'>
+      <div class='instagram-post social'>
         <img class='' src="http://placehold.it/300x300">
       </div>
     </div>
@@ -182,10 +181,10 @@
         <a href='#'>Poutine is chaning Toronto's brunch game<span>Crave TO</span></a>
         <a href='#'>Poutine is chaning Toronto's brunch game<span>Crave TO</span></a>
         <a href='#'>Poutine is chaning Toronto's brunch game<span>Crave TO</span></a>
-        <div class='load'>
+        <!-- <div class='load'>
           <span>Load More</span>
           <svg class='arrow-down'><use xlink:href="#arrow-down"></use></svg>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

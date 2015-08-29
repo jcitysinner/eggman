@@ -17,7 +17,7 @@ div.menu-section {
   .menu {
 
     font-size: 0;
-    line-height: 0;
+    line-height: 0;  
 
   }
 
@@ -159,6 +159,427 @@ div.status-section {
       &:last-child {
 
         margin-left: 50px;
+
+      }
+
+    }
+
+  }
+
+}
+
+div.about-section {
+
+  padding: 38px;
+  background-color: $dark-blue;
+  color: $white;
+  text-align: center;
+  background-image: url('img/raster/compressed/about-bg.jpg');
+
+  h2 {
+
+    font-family: $header;
+    font-size: 28px;
+    line-height: 33px;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 16px 30px;
+    border-top: solid 1px $white;
+    border-bottom: solid 1px $white;
+    text-transform: uppercase;
+    font-weight: normal;
+
+  }
+
+  .about-wrap {
+
+    @include justifyed();
+    margin-top: 37px;
+
+  }
+
+  .about-column {
+
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+
+    h3 {
+
+      font-family: $header;
+      font-size: 25px;
+      line-height: 30px;
+      text-transform: uppercase;
+      font-weight: normal;
+
+    }
+
+    p {
+
+      font-family: $sans-serif;
+      font-size: 18px;
+      line-height: 25px;
+
+    }
+
+  }
+
+}
+
+div.team-section {
+
+
+  margin-top: 90px;
+  background-color: $dark-blue;
+  width: 100%;
+  position: relative;
+  padding: 38px 0 38px 155px;
+  text-align: left;
+
+  img {
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 137px;
+
+  }
+
+  h2 {
+
+    font-size: 25px;
+    line-height: 30px;
+    padding: 0;
+    border: 0;
+
+  }
+
+  p {
+
+    margin-bottom: 0;
+    font-style: italic;
+
+  }
+
+  .team-copy {
+
+    display: inline-block;
+
+  }
+
+  a {
+
+    display: inline-block;
+
+    font-size: 15px;
+    color: $white;
+    line-height: 21px;
+    background-color: $red;
+    padding: 8px 50px;
+    border-radius: 40px;
+    float: right;
+    margin-right: 37px;
+    margin-top: 27px;
+    border: solid 1px transparent;
+
+    &:hover {
+
+      background: $white;
+      border: solid 1px $red;
+      color: $red;
+
+    }
+
+  }
+
+}
+
+
+div.contact-section {
+
+  background-image: url('img/raster/compressed/cater-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+
+  h2 {
+
+    font-family: $display;
+    font-size: 76.02px;
+    color: $white;
+    line-height: 87px;
+    text-shadow: 0 0 13px rgba($black, .5);
+    margin: 0;
+
+  }
+
+  p {
+
+    /* Email Us For Details: */
+    font-size: 15.44px;
+    color: $yellow;
+    letter-spacing: .27px;
+    font-style: italic;
+    line-height: 21px;
+    text-shadow: 0 0 8px rgba($black, .5);
+    width: 100%;
+    max-width: 300px;
+
+  }
+
+  a {
+
+    display: inline-block;
+
+    font-size: 15px;
+    color: $white;
+    line-height: 21px;
+    background-color: $red;
+    padding: 8px 50px;
+    border-radius: 40px;
+    border: solid 1px transparent;
+
+    &:hover {
+
+      background: $white;
+      border: solid 1px $red;
+      color: $red;
+
+    }
+
+  }
+
+  .images {
+
+    @include alignment(absolute, vertical);
+
+    right: 10px;
+    width: 70%;
+    text-align: center;
+
+    img {
+
+      width: 123px;
+      margin-right: -8px;
+      border: solid 1px $darkest-grey;
+      vertical-align: top;
+      position: relative;
+
+      &:first-child {
+
+        @include transform(rotate(-8deg));
+        z-index: 1; 
+
+      }
+
+      &:nth-child(2) {
+
+        //@include transform(rotate(5deg));
+        z-index: 2;
+
+      }
+
+      &:nth-child(3) {
+
+        @include transform(rotate(-8deg));
+        z-index: 1;
+
+      }
+
+      &:last-child {
+
+        @include transform(rotate(8deg));
+        z-index: 2; 
+
+      }
+
+    }
+
+  }
+
+}
+
+
+div.social-section {
+
+  background-image: url('img/raster/compressed/social-bg.jpg');
+  padding: 18px 0;
+  text-align: center;
+
+  .social {
+
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 6px;
+
+  }
+
+  .instagram-post {
+
+    font-size: 0;
+    line-height: 0;
+
+    img {
+
+      width: 140px;
+      border: solid 2px $white;
+
+    }
+
+  }
+
+  .twitter-post {
+
+    border: solid 2px $white;
+    padding: 8px;
+    position: relative;
+
+    img {
+
+      width: 120px;
+      border: solid 1px $black;
+      vertical-align: top;
+
+    }
+
+    p {
+
+      font-size: 15px;
+      letter-spacing: .87px;
+      color: $white;
+      line-height: 20px;
+      display: inline-block;
+      max-width: 190px;
+      margin: 0 0 0 15px;
+      vertical-align: top;
+      text-align: left;
+
+    }
+
+    svg {
+
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+
+    }
+
+  }
+
+}
+
+.share-section {
+
+  background-color: $dark-red;
+  color: $yellow;
+  padding: 20px;
+
+  a {
+
+    color: $yellow;
+
+  }
+
+  svg {
+
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    margin-left: 12px;
+
+  }
+
+  .share {
+
+    @include alignment(absolute, vertical);
+
+    right: 10px;
+
+    span {
+
+      vertical-align: middle;
+
+    }
+
+  }
+
+}
+
+.media-section {
+
+
+  background-color: $dark-blue;
+  padding: 35px 0;
+  color: $white;
+  font-size: 0;
+  line-height: 0;
+
+  a {
+
+    color: $white;
+
+  }
+
+  .media-contact {
+
+    width: 22%;
+    display: inline-block;
+    vertical-align: top;
+
+    h2 {
+
+      margin: 0;
+      font-family: $sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 27px;
+      text-transform: uppercase;
+
+    }
+
+    p {
+
+      opacity: .44;
+      font-size: 13px;
+      line-height: 18px;
+      margin-top: 10px;
+      margin-bottom: 40px;
+
+    }
+
+    a {
+
+      font-size: 11px;
+      line-height: 15px;
+
+    }
+
+  }
+
+  .media-links {
+
+    @include justifyed();
+    width: 78%;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 50px;
+
+    a {
+
+      font-size: 13px;
+      line-height: 18px;
+      display: inline-block;
+      width: 48%;
+      vertical-align: top;
+      margin-bottom: 26px;
+
+      span {
+
+        display: block;
+        color: $red;
 
       }
 
