@@ -1,0 +1,169 @@
+div.menu-section {
+
+  padding: 16px 0;
+
+  h2 {
+
+    font-weight: 100;
+    color: $dark-blue;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2.2px;
+    line-height: 18px;
+    text-align: center; 
+
+  }
+
+  .menu {
+
+    font-size: 0;
+    line-height: 0;
+
+  }
+
+  .menu-wrap {
+
+    overflow-x: auto;
+
+  }
+
+  .item {
+
+    width: 120px;
+    display: inline-block;
+    margin-right: 20px;
+    text-align: center;
+    padding: 0 0 20px;
+
+    span {
+
+      /* Egg Manwich: */
+      font-weight: 500;
+      font-size: 14px;
+      color: $grey;
+      line-height: 19px;
+
+    }
+
+  }
+
+}
+
+
+div.hero-section {
+
+  background: $white;
+  background: -moz-linear-gradient(top, $white 0%, $white 55%, $yellow 55%, $yellow 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, $white), color-stop(55%, $white), color-stop(55%, $yellow), color-stop(100%, $yellow));
+  background: -webkit-linear-gradient(top, $white 0%, $white 55%, $yellow 55%, $yellow 100%);
+  background: -o-linear-gradient(top, $white 0%, $white 55%, $yellow 55%, $yellow 100%);
+  background: -ms-linear-gradient(top, $white 0%, $white 55%, $yellow 55%, $yellow 100%);
+  background: linear-gradient(to bottom, $white 0%, $white 55%, $yellow 55%, $yellow 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$white', endColorstr='$yellow', GradientType=0);
+
+  position: relative;
+  line-height: 0;
+  font-size: 0;
+
+  h2 {
+
+    @include alignment(absolute, center);
+
+    /* Toronto’s FIrst : */
+    font-family: $display;
+    font-size: 75px;
+    color: $white;
+    line-height: 82px;
+    text-shadow: 0 1px 3px $black;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+
+    span {
+
+      display: block;
+      font-size: 20px;
+      color: $yellow;
+      line-height: 23px;
+
+    }
+
+  }
+
+}
+
+div.status-section {
+
+  background-color: $yellow;
+  border-top: solid 1px $white;
+
+  div.status {
+
+    padding-top: 5px;
+
+  }
+
+  svg.sun-icon {
+
+    width: 105px;
+    height: 55px;
+    vertical-align: bottom;
+
+  }
+
+  p {
+
+    font-weight: 500;
+    font-size: 18px;
+    color: $light-blue;
+    line-height: 25px;
+    padding-bottom: 6px;
+    display: inline-block;
+    margin: 0 0 0 40px;
+
+    span {
+
+      display: block;
+      font-size: 13px;
+      line-height: 18px;
+
+    }
+
+  }
+
+  div.controls {
+
+    @include alignment(absolute, vertical);
+
+    right: 10px;
+
+    svg {
+
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 10px;
+      margin-top: -5px;
+
+    }
+
+    a {
+
+      /* View on Google Maps: */
+      font-weight: 500;
+      font-size: 14px;
+      color: $dark-blue;
+      line-height: 19px;
+      vertical-align: middle;
+
+      &:last-child {
+
+        margin-left: 50px;
+
+      }
+
+    }
+
+  }
+
+}

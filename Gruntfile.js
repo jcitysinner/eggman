@@ -92,10 +92,6 @@ module.exports = function(grunt) {
 	      },
 	      uses_defaults: ['js/main.js'],
     },
-    
-    phplint: {
-               all: ['*.php', '**/*.php', '!node_modules/**']
-    },
                 
 		watch: {
 			scripts: {
@@ -148,10 +144,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-newer');
 	grunt.loadNpmTasks('grunt-scss-lint');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-phplint');
 	grunt.loadNpmTasks('grunt-notify');
 
-	grunt.registerTask('default', ['svgmin', 'scsslint', 'sass', 'jshint', 'svgstore', 'uglify', 'imagemin', 'phplint' ]);
+	grunt.registerTask('default', ['svgmin', 'scsslint', 'sass', 'jshint', 'svgstore', 'uglify', 'imagemin' ]);
 	grunt.registerTask('dev', ['watch']);
 };
 

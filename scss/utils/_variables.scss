@@ -1,25 +1,26 @@
 // Colours
 // -------------------------
 
-$light_blue: #00b8e0; 
-$dark_blue: #215e9c;
+$light-blue: #003da5; 
+$dark-blue: #041e41;
+$yellow: #dfc900;
 
 $white: #fff;
 
-$lightest_grey: #f8f8f8;
-$light_grey: #f1f1f1;
-$grey: #e3e3e3;
-$dark_grey: #bebebe;
-$darkest_grey: #62686d;
+$lightest-grey: #f8f8f8;
+$light-grey: #f1f1f1;
+$grey: #a7a7a7;
+$dark-grey: #bebebe;
+$darkest-grey: #62686d;
 
-$black: #3c4146;
+$black: #000;
 
 
-$link: $light_blue;
-$text: $darkest_grey;
+$link: $light-blue;
+$text: $darkest-grey;
 $strong: darken($text, 10%);
 
-$brand: $light_blue;
+$brand: $light-blue;
 
 
 // Type
@@ -28,7 +29,8 @@ $brand: $light_blue;
 
 
 $serif: 'Libre Baskerville', serif;
-$sans-serif: helvetica;
+$sans-serif: avenir;
+$display: edosz;
 
 $light: 300;
 $book: 400;

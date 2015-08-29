@@ -7,70 +7,74 @@
   <div class='menu-section'>
     <div class='wrapper'>
     <h2>Today's Menu</h2>
-      <div class='menu'>
-        <div class='item'>
-          <img class='' src="http://placehold.it/350x150">
-          <span>Egg Manwich</span>
+      <div class='menu-wrap'>
+        <div class='menu'>
+          <div class='item'>
+            <div class='img-wrap'><img class='' src="img/raster/compressed/egg1.jpg"></div>
+            <span>Egg Manwich</span>
+          </div>
+          <div class='item'>
+            <div class='img-wrap'><img class='' src="img/raster/compressed/egg2.jpg"></div>
+            <span>Egg Manwich</span>
+          </div>
+          <div class='item'>
+            <div class='img-wrap'><img class='' src="img/raster/compressed/egg3.jpg"></div>
+            <span>Egg Manwich</span>
+          </div>
+          <div class='item'>
+            <div class='img-wrap'><img class='' src="img/raster/compressed/egg1.jpg"></div>
+            <span>Egg Manwich</span>
+          </div>
+          <div class='item'>
+            <div class='img-wrap'><img class='' src="img/raster/compressed/egg2.jpg"></div>
+            <span>Egg Manwich</span>
+          </div>
+          <div class='item'>
+            <div class='img-wrap'><img class='' src="img/raster/compressed/egg3.jpg"></div>
+            <span>Egg Manwich</span>
+          </div>
+          <div class='item'>
+            <div class='img-wrap'><img class='' src="img/raster/compressed/egg1.jpg"></div>
+            <span>Egg Manwich</span>
+          </div>
+          <div class='item'>
+            <div class='img-wrap'><img class='' src="img/raster/compressed/egg2.jpg"></div>
+            <span>Egg Manwich</span>
+          </div>
+          <div class='item'>
+            <div class='img-wrap'><img class='' src="img/raster/compressed/egg3.jpg"></div>
+            <span>Egg Manwich</span>
+          </div>
+          <div class='item'>
+            <div class='img-wrap'><img class='' src="img/raster/compressed/egg1.jpg"></div>
+            <span>Egg Manwich</span>
+          </div>
+          <div class='item'>
+            <div class='img-wrap'><img class='' src="img/raster/compressed/egg2.jpg"></div>
+            <span>Egg Manwich</span>
+          </div>
+          <div class='item'>
+            <div class='img-wrap'><img class='' src="img/raster/compressed/egg3.jpg"></div>
+            <span>Egg Manwich</span>
+          </div>
+          <!-- <svg class='arrow-right'><use xlink:href="#arrow-right"></use></svg> -->
         </div>
-        <div class='item'>
-          <img class='' src="http://placehold.it/350x150">
-          <span>Egg Manwich</span>
-        </div>
-        <div class='item'>
-          <img class='' src="http://placehold.it/350x150">
-          <span>Egg Manwich</span>
-        </div>
-        <div class='item'>
-          <img class='' src="http://placehold.it/350x150">
-          <span>Egg Manwich</span>
-        </div>
-        <div class='item'>
-          <img class='' src="http://placehold.it/350x150">
-          <span>Egg Manwich</span>
-        </div>
-        <div class='item'>
-          <img class='' src="http://placehold.it/350x150">
-          <span>Egg Manwich</span>
-        </div>
-        <div class='item'>
-          <img class='' src="http://placehold.it/350x150">
-          <span>Egg Manwich</span>
-        </div>
-        <div class='item'>
-          <img class='' src="http://placehold.it/350x150">
-          <span>Egg Manwich</span>
-        </div><div class='item'>
-          <img class='' src="http://placehold.it/350x150">
-          <span>Egg Manwich</span>
-        </div>
-        <div class='item'>
-          <img class='' src="http://placehold.it/350x150">
-          <span>Egg Manwich</span>
-        </div>
-        <div class='item'>
-          <img class='' src="http://placehold.it/350x150">
-          <span>Egg Manwich</span>
-        </div>
-        <div class='item'>
-          <img class='' src="http://placehold.it/350x150">
-          <span>Egg Manwich</span>
-        </div>
-        <svg class='arrow-right'><use xlink:href="#arrow-right"></use></svg>
       </div>
     </div>
   </div>
 
   <div class='hero-section'>
     <div class='wrapper'>
-      <h2>Toronto's First Breakfast Food Truck</h2>
+      <h2>Toronto's First <span>( and only )</span>Breakfast Food Truck</h2>
+      <img src='img/raster/compressed/truck.png'>
     </div>
   </div>
 
   <div class='status-section'>
     <div class='wrapper'>
       <div class='status'>
-        <svg class='open'><use xlink:href="#open"></use></svg>
-        <svg class='closed'><use xlink:href="#open"></use></svg>
+        <svg class='sun-icon'><use xlink:href="#sun-icon"></use></svg>
+        <!-- <svg class='closed'><use xlink:href="#open"></use></svg> -->
         <p><span>Now Open till 10am</span>Wilson St W & Bathurst Ave N</p>
       </div>
       <div class='controls'>

@@ -3,7 +3,7 @@
 </div>
 
 <div id="head-container">
-	<header id="site-header">
+	<header id="site-header" class='site-header'>
 	
 	 <svg class='logo-main'><use xlink:href="#logo-main"></use></svg>
 

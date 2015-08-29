@@ -47,7 +47,7 @@ $border: lighten($grey, 30%);
     font-size: em(10); 
     font-family: $body-text;
     font-size: 14px;
-    color: #4c4849;
+    //color: #4c4849;
     line-height: 26px;
     text-align: center;
     position: relative;
@@ -126,7 +126,7 @@ $border: lighten($grey, 30%);
 
   del, 
   strike { 
-    color: #cdb7b5; 
+   // color: #cdb7b5; 
   }
 
   dfn, 
@@ -141,8 +141,8 @@ $border: lighten($grey, 30%);
 
   ins, 
   mark {  
-    color: darken(#b6c5be, 10%); 
-    background: #fff9c0; 
+    //color: darken(#b6c5be, 10%); 
+    //background: #fff9c0; 
   }
 
   pre { 
