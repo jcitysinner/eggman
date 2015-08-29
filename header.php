@@ -5,7 +5,7 @@
 <div id="head-container">
 	<header id="site-header">
 	
-	 <svg class='logo-main'><use xlink:href="#logo-main"></use></svg>
+	 <svg class='logo-main'><use xlink:href="#logo-type"></use></svg>
 
 	</header>
 </div> 
