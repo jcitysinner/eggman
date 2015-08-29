@@ -1,7 +1,6 @@
 <footer id="site_footer">
 <div class="wrapper">
 		
-	<a href="http://www.exsite.ca" id="credit">Site by Exsite Inc <svg><use xlink:href="#logo_exsite"></use></svg></a>
 	
 </div>
 </footer>
