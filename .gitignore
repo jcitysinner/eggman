@@ -1,1 +1,25 @@
+<<<<<<< HEAD
 node_modules/
+=======
+wp-config.php
+wp-content/backup-db/*
+wp-content/cache/*
+wp-content/cache/supercache/*
+wp-content/upgrade/*
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/uploads/
+sitemap.xml
+sitemap.xml.gz
+.rvmrc
+wp-content/uploads
+.DS_Store
+vendor
+.bundle
+wp-config.php
+.ruby-*
+node_modules/
+*.scssc
+.htaccess
+*.zip
+>>>>>>> origin/master
