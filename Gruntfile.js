@@ -1,157 +1,244 @@
 module.exports = function(grunt) {
 
- require('time-grunt')(grunt);
+  require('load-grunt-tasks')(grunt);
+  require('time-grunt')(grunt);
 
-	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
 
-		sass: {
-			options: {
-				sourceMap: true,
-				outputStyle: 'compressed'
-			},
-			dist: {
-				files: {
-					'style.css': 'scss/style.scss'
-				}
-			}
-		},
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
 
-		svgmin: {
-			options: {
-				plugins: [
-				{ removeViewBox: false }, 
-				{ removeUselessStrokeAndFill: true }, 
-				{ cleanupIDs: false }
-				]
-			},
-			dist: {
-				expand: true,
-				cwd: 'img/svg/raw/',
-				src: ['*.svg'],
-				dest: 'img/svg/compressed'
-			}
-		},
 
-		svgstore: {
-			options: {
-				includedemo: true,
-				cleanup: true,
-				symbol: {
-					viewBox: '0 0 100 100'
-				}
-			},
-			default: {
-				files: {
-					'img/sprite.svg': ['img/svg/compressed/*.svg']
-				},
-			}
-		},
+  /*=============================================
+  =            SASS                             =
+  =============================================*/
+        
 
-		uglify: {
-			build: {
-				src: 'js/main.js',
-				dest: 'js/main.min.js'
-			}
-		},
+    /*==========  grunt sass - LibSass compile  ==========*/
 
-		imagemin: { // Task
-			dynamic: { // Another target
-				files: [{
-					expand: true, // Enable dynamic expansion
-					cwd: 'img/raster/raw/', // Src matches are relative to this path
-					src: ['**/*.{png,jpg,gif}'], // Actual patterns to match
-					dest: 'img/raster/compressed/' // Destination path prefix
-				}]
-			}
-		},
+    sass: {
+      options: {
+        sourceMap: true,
+        outputStyle: 'compressed',
+        sourceComments: false
+      },
+      dist: {
+        files: {
+        'style.css': 'scss/style.scss'
+        }
+      }
+    },
 
-		scsslint: {
-		     allFiles: [
-                'scss/**/*.scss',  '!scss/vendors/**/*.scss',
-            ],
-            options: {
-      			bundleExec: false,
-      			config: 'scss/scss-lint.yml',
-      			//reporterOutput: 'scss-lint-report.xml',
-      			colorizeOutput: true,
-      			maxBuffer: 900000,
-      			force: false,
-    		},
- 		},
 
-    jshint: {
-	      options: {
-		        curly: true,
-		        eqeqeq: true,
-		        eqnull: true,
-		        browser: true,
-		        globals: {
-		          jQuery: true
-		        },
-	      },
-	      uses_defaults: ['js/main.js'],
+    /*==========  grunt scsslint - Linting via scss-lint gem  ==========*/
+
+    scsslint: {
+      allFiles: [
+        'scss/**/*.scss', '!scss/vendors/**/*.scss'
+      ],
+      options: {
+        bundleExec: false,
+        config: 'scss/scss-lint.yml',
+        colorizeOutput: true,
+        force: true,
+
+      },
+    },
+
+
+    /*==========  grunt banner - Add theme info to css  ==========*/
+
+    WPTheme: '/* \nTheme Name: <%= pkg.name %>\n' +
+        'Version: <%= pkg.version %>\n' +
+        'Description: <%= pkg.title %>\n' +
+        'Author: <%= pkg.author %>\n' +
+        '<%= grunt.template.today("dd-mm-yyyy") %>\n */',
+
+    usebanner: {
+      dist: {
+        options: {
+          position: 'top',
+          banner: '<%= WPTheme %>'
+        },
+        files: {
+          src: [ 'style.css' ]
+        }
+      }
+    },
+
+
+
+  /*=============================================
+  =            Image Functions                  =
+  =============================================*/
+  
+
+
+
+    /*==========  SVGMin - cleanup and compress svg  ==========*/
+
+    svgmin: {
+      options: {
+        plugins: [
+        { removeViewBox: false }, 
+        { removeUselessStrokeAndFill: true }, 
+        { cleanupIDs: true }
+        ]
+      },
+      dist: {
+        expand: true,
+        cwd: 'img/svg/raw/',
+        src: ['*.svg'],
+        dest: 'img/svg/compressed'
+      }
+    },
+
+
+    /*==========  SVGStore - generate svg sprite  ==========*/
+
+    svgstore: {
+      options: {
+        includedemo: false,
+        cleanup: true,
+        symbol: { viewBox: '0 0 100 100' }
+      },
+      default: {
+        files: {'img/sprite.svg': ['img/svg/compressed/*.svg']},
+      }
+    },
+
+
+    /*==========  ImageMin - compress raster files  ==========*/
+
+    imagemin: { 
+      dynamic: { 
+        options: { optimizationLevel: 7},
+        files: [{
+          expand: true,
+          cwd: 'img/raster/raw/', 
+          src: ['**/*.{png,jpg,gif}'], 
+          dest: 'img/raster/compressed/' 
+        }]
+      }
     },
     
-    phplint: {
-               all: ['*.php', '**/*.php', '!node_modules/**']
-    },
-                
-		watch: {
-			scripts: {
-				files: ['js/*.js', 'js/**/*.js'],
-				tasks: ['newer:uglify', 'jshint'],
-				options: {
-					spawn: false,
-					livereload: 25711,
-				}
-			},
-			images: {
-				files: ['img/raster/raw/*.{png,jpg,gif}'],
-				tasks: ['newer:imagemin'],
-				options: {
-					spawn: false,
-					livereload: 25711,
-				}
-			},
-			php: {
-				files: ['*.php', '**/*.php'],
-				options: {
-					spawn: false,
-					livereload: 25711,
-				}
-			}, 
-			svg: {
-				files: ['img/svg/raw/*.svg'],
-				tasks: ['svgmin', 'svgstore'],
-				options: {
-					spawn: false,
-					livereload: 25711,
-				}
-			},
-			sass: {
-				files: ['scss/*.scss', 'scss/**/*.scss'],
-				tasks: ['scsslint','sass'],
-				options: {
-					spawn: false,
-					livereload: 25711,
-				}
-			}
-		}
-	});
-	grunt.loadNpmTasks('grunt-sass');
-	grunt.loadNpmTasks('grunt-svgstore');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-svgmin');
-	grunt.loadNpmTasks('grunt-contrib-imagemin'); 
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-newer');
-	grunt.loadNpmTasks('grunt-scss-lint');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-phplint');
-	grunt.loadNpmTasks('grunt-notify');
+    /*==========  ImageOptim - compress raster files again  ==========*/
 
-	grunt.registerTask('default', ['svgmin', 'scsslint', 'sass', 'jshint', 'svgstore', 'uglify', 'imagemin', 'phplint' ]);
-	grunt.registerTask('dev', ['watch']);
+    imageoptim: {
+      myTask: {
+        src: ['img/raster/compressed/']
+      }
+    },
+
+    
+    
+  /*=============================================
+  =            JS Functions                     =
+  =============================================*/
+  
+
+
+    /*==========  JSHint - Check JS  ==========*/
+
+    jshint: {
+      options: {
+        curly: true,
+        eqeqeq: true,
+        eqnull: true,
+        browser: true,
+        globals: { jQuery: true },
+      },
+      uses_defaults: ['js/main.js'],
+    },
+
+
+    /*==========  Uglify - compress JS  ==========*/
+
+    uglify: {
+      my_target: {
+        options: {
+          sourceMap: true,
+          sourceMapName: 'script.js.map',
+          compress: {
+            drop_console: true
+          }
+        },
+
+        files: {
+          'js/main.min.js': ['js/main.js']
+        }
+      }
+    },
+
+
+
+  /*=============================================
+  =            Watch Task                      =
+  =============================================*/
+
+
+    watch: {
+      scripts: {
+        files: ['js/*.js'],
+        tasks: ['newer:jshint', 'newer:uglify'],
+        options: {
+          livereload: 25711,
+        }
+      },
+
+      images: {
+        files: ['img/raster/raw/*.{png,jpg,gif}'],
+        tasks: ['newer:imagemin'],
+        options: {
+          livereload: 25711,
+        }
+      },
+
+      php: {
+        files: ['*.php', '**/*.php'],
+        options: {
+          livereload: 25711,
+        }
+      }, 
+
+      html: {
+        files: ['*.html', '**/*.html'],
+        options: {
+          livereload: 25711,
+        }
+      }, 
+
+      css: {
+        files: ['scss/admin.css'],
+        options: {
+          livereload: 25711,
+        }
+      }, 
+
+      svg: {
+        files: ['img/svg/raw/*.svg'],
+        tasks: ['svgmin', 'svgstore'],
+        options: {
+          livereload: 25711,
+        }
+      },
+
+      sass: {
+        files: ['scss/*.scss', 'scss/**/*.scss', '!scss/vendors/**'],
+        tasks: ['scsslint', 'sass', 'usebanner'],
+        options: {
+          livereload: 25711,
+        }
+      }
+
+    }
+
+
+  });
+
+  grunt.registerTask('style', ['scsslint', 'sass', 'usebanner']);
+  grunt.registerTask('scripts', ['jshint', 'uglify']);
+  grunt.registerTask('images', ['svgmin', 'svgstore', 'imagemin', 'imageoptim']);
+  grunt.registerTask('dev', ['watch']);
+
 };
 
