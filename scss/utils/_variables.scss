@@ -1,25 +1,23 @@
 // Colours
 // -------------------------
 
-$light_blue: #00b8e0; 
-$dark_blue: #215e9c;
+$light-blue: #003da5; 
+$dark-blue: #041e41;
+
+$yolk: #dfca00;
+
+$red: #da281c;
 
 $white: #fff;
-
-$lightest_grey: #f8f8f8;
-$light_grey: #f1f1f1;
-$grey: #e3e3e3;
-$dark_grey: #bebebe;
-$darkest_grey: #62686d;
-
 $black: #3c4146;
 
+$grey: #a7a7a7;
 
-$link: $light_blue;
-$text: $darkest_grey;
+$link: $light-blue;
+$text: $black;
 $strong: darken($text, 10%);
 
-$brand: $light_blue;
+$brand: $dark-blue;
 
 
 // Type
