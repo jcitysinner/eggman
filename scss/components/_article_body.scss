@@ -2,6 +2,9 @@ $body-text: $sans-serif;
 $header-text:  $sans-serif;
 $header-text-color: $brand;
 
+$del: #cdb7b5;
+$ins: #b6c5be;
+
 $border: lighten($grey, 30%);
 
 .article-content {
@@ -12,7 +15,7 @@ $border: lighten($grey, 30%);
   color: $text;
   line-height: em(25);
   
-  @include breakpoint(sub-tablet-max) { font-size: em(16); }
+  
   
   h1,
   h2,
@@ -29,7 +32,6 @@ $border: lighten($grey, 30%);
     text-transform: uppercase;
     font-weight: $heavy;
 
-    @include breakpoint(sub-tablet-max) { line-height: 1em; }
   }
   
   h1 { font-size: 1.5em; }
@@ -44,10 +46,8 @@ $border: lighten($grey, 30%);
 
 
   h4 { 
-    font-size: em(10); 
     font-family: $body-text;
     font-size: 14px;
-    color: #4c4849;
     line-height: 26px;
     text-align: center;
     position: relative;
@@ -126,7 +126,7 @@ $border: lighten($grey, 30%);
 
   del, 
   strike { 
-    color: #cdb7b5; 
+    color: $del; 
   }
 
   dfn, 
@@ -141,8 +141,8 @@ $border: lighten($grey, 30%);
 
   ins, 
   mark {  
-    color: darken(#b6c5be, 10%); 
-    background: #fff9c0; 
+    color: darken($ins, 50%); 
+    background: $ins; 
   }
 
   pre { 
@@ -151,7 +151,6 @@ $border: lighten($grey, 30%);
     padding: 1em 2em; 
     margin-bottom: 24px;
     overflow: auto;
-    white-space: pre;
     white-space: pre-wrap;
     word-wrap: break-word;
   }
@@ -240,7 +239,6 @@ $border: lighten($grey, 30%);
     color: $strong;
     font-size: em(30);
     font-style: normal;
-    font-weight: normal;
     margin: 0;
     padding: 1em 2em;
     font-weight: $light;
@@ -389,16 +387,12 @@ $border: lighten($grey, 30%);
     float: left;
     margin: 0 1.5em 0 0;
     max-width: 50%;
-
-    @include breakpoint(sub-tablet-max) { max-width: 40%; }
   }
   
   .alignright {
     float: right;
     margin: 0 0 0 1.5em;
     max-width: 50%;
-
-    @include breakpoint(sub-tablet-max) { max-width: 40%; }
   }
   
   .aligncenter {
