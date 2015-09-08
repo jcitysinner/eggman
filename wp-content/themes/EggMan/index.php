@@ -1,66 +1,13 @@
-<?php include( "header_doc.php"); ?>
-   <body class="">
 <?php include( "header.php"); ?>
+
+
+
 
 <div class='main'>
 
-  <div class='menu-section'>
-    <div class='wrapper'>
-    <h2>Today's Menu</h2>
-      <div class='menu-wrap'> 
-        <div class='menu'>
-          <div class='item'>
-            <div class='img-wrap'><img class='' src="img/raster/compressed/egg1.jpg"></div>
-            <span>Egg Manwich</span>
-          </div>
-          <div class='item'>
-            <div class='img-wrap'><img class='' src="img/raster/compressed/egg2.jpg"></div>
-            <span>Egg Manwich</span>
-          </div>
-          <div class='item'>
-            <div class='img-wrap'><img class='' src="img/raster/compressed/egg3.jpg"></div>
-            <span>Egg Manwich</span>
-          </div>
-          <div class='item'>
-            <div class='img-wrap'><img class='' src="img/raster/compressed/egg1.jpg"></div>
-            <span>Egg Manwich</span>
-          </div>
-          <div class='item'>
-            <div class='img-wrap'><img class='' src="img/raster/compressed/egg2.jpg"></div>
-            <span>Egg Manwich</span>
-          </div>
-          <div class='item'>
-            <div class='img-wrap'><img class='' src="img/raster/compressed/egg3.jpg"></div>
-            <span>Egg Manwich</span>
-          </div>
-          <div class='item'>
-            <div class='img-wrap'><img class='' src="img/raster/compressed/egg1.jpg"></div>
-            <span>Egg Manwich</span>
-          </div>
-          <div class='item'>
-            <div class='img-wrap'><img class='' src="img/raster/compressed/egg2.jpg"></div>
-            <span>Egg Manwich</span>
-          </div>
-          <div class='item'>
-            <div class='img-wrap'><img class='' src="img/raster/compressed/egg3.jpg"></div>
-            <span>Egg Manwich</span>
-          </div>
-          <div class='item'>
-            <div class='img-wrap'><img class='' src="img/raster/compressed/egg1.jpg"></div>
-            <span>Egg Manwich</span>
-          </div>
-          <div class='item'>
-            <div class='img-wrap'><img class='' src="img/raster/compressed/egg2.jpg"></div>
-            <span>Egg Manwich</span>
-          </div>
-          <div class='item'>
-            <div class='img-wrap'><img class='' src="img/raster/compressed/egg3.jpg"></div>
-            <span>Egg Manwich</span>
-          </div>
-          <!-- <svg class='arrow-right'><use xlink:href="#arrow-right"></use></svg> -->
-        </div>
-      </div>
-    </div>
+<?php include( "_objects/slide_menu.php"); ?>
+
+
   </div>
 
   <div class='hero-section'>

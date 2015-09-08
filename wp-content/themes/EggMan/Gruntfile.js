@@ -181,7 +181,7 @@ module.exports = function(grunt) {
         files: ['js/*.js'],
         tasks: ['newer:jshint', 'newer:uglify'],
         options: {
-          livereload: 25711,
+          livereload: 15711,
         }
       },
 
@@ -189,28 +189,28 @@ module.exports = function(grunt) {
         files: ['img/raster/raw/*.{png,jpg,gif}'],
         tasks: ['newer:imagemin'],
         options: {
-          livereload: 25711,
+          livereload: 15711,
         }
       },
 
       php: {
         files: ['*.php', '**/*.php'],
         options: {
-          livereload: 25711,
+          livereload: 15711,
         }
       }, 
 
       html: {
         files: ['*.html', '**/*.html'],
         options: {
-          livereload: 25711,
+          livereload: 15711,
         }
       }, 
 
       css: {
         files: ['scss/admin.css'],
         options: {
-          livereload: 25711,
+          livereload: 15711,
         }
       }, 
 
@@ -218,7 +218,7 @@ module.exports = function(grunt) {
         files: ['img/svg/raw/*.svg'],
         tasks: ['svgmin', 'svgstore'],
         options: {
-          livereload: 25711,
+          livereload: 15711,
         }
       },
 
@@ -226,7 +226,7 @@ module.exports = function(grunt) {
         files: ['scss/*.scss', 'scss/**/*.scss', '!scss/vendors/**'],
         tasks: ['scsslint', 'sass', 'usebanner'],
         options: {
-          livereload: 25711,
+          livereload: 15711,
         }
       }
 
