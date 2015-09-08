@@ -51,16 +51,7 @@ div.menu-section {
 
 
 div.hero-section {
-
-  background: $white;
-  background: -moz-linear-gradient(top, $white 0%, $white 55%, $yellow 55%, $yellow 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, $white), color-stop(55%, $white), color-stop(55%, $yellow), color-stop(100%, $yellow));
-  background: -webkit-linear-gradient(top, $white 0%, $white 55%, $yellow 55%, $yellow 100%);
-  background: -o-linear-gradient(top, $white 0%, $white 55%, $yellow 55%, $yellow 100%);
-  background: -ms-linear-gradient(top, $white 0%, $white 55%, $yellow 55%, $yellow 100%);
-  background: linear-gradient(to bottom, $white 0%, $white 55%, $yellow 55%, $yellow 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$white', endColorstr='$yellow', GradientType=0);
-
+  @include background-image(linear-gradient(left top, left bottom, color-stop(0%, $white), color-stop(55%, $white), color-stop(55%, $yellow), color-stop(100%, $yellow)));
   position: relative;
   line-height: 0;
   font-size: 0;

@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-node_modules/
-=======
 wp-config.php
 wp-content/backup-db/*
 wp-content/cache/*
@@ -22,4 +19,3 @@ node_modules/
 *.scssc
 .htaccess
 *.zip
->>>>>>> origin/master
