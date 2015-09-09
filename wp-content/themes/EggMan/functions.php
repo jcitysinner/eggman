@@ -37,7 +37,7 @@ function eggman_scripts() {
 
       if (false !== strpos($url,'localhost') or  false !== strpos($url,'10.199.1.198') ) {
          wp_register_script('main', get_template_directory_uri().'/js/main.js', array('jquery'), '2.0', true);
-         wp_register_script('livereload', 'http://' . $_SERVER['SERVER_NAME'].':25710/livereload.js?snipver=1', null, false, true);
+         wp_register_script('livereload', 'http://' . $_SERVER['SERVER_NAME'].':15711/livereload.js?snipver=1', null, false, true);
       } else {
          wp_register_script('main', get_template_directory_uri().'/js/main.min.js', array('jquery'), true);
       }

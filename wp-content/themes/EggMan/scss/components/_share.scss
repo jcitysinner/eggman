@@ -1,0 +1,78 @@
+
+.share {
+  background-color: shade($red, 20%);
+  color: $yellow;
+  padding: 18px 0;
+
+  .wrapper {
+    @include break($min: 400px) {
+      @include justifyed;
+    }
+  }
+
+  a {
+    @include linkcolor($yellow, darken);
+    display: inline-block;
+  }
+
+  .hashtag {
+    //@include test;
+    text-transform: uppercase;
+    font-weight: $medium;
+    font-size: 14px;
+    vertical-align: middle;
+
+    @include break($max: 600px) {
+      display: none;
+    }
+    
+  }
+  
+  .accounts {
+    //@include test;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+
+    @include break($max: 399px) { 
+      display: block;
+    }
+
+    @include break($min: 399px, $max: 600px) {
+      @include justifyed;
+      display: block;
+    }
+
+    span {
+      //@include test;
+      display: inline-block;
+      font-weight: $medium;
+      font-size: 14px;
+      vertical-align: middle;
+
+      @include break($min: 400px) {
+        margin-right: 24px;
+      }
+      
+      @include break($max: 400px) {
+        width: 100%;
+        font-size: 13px;
+        margin-bottom: 12px;
+      }
+
+
+    }
+
+    svg {
+      @include size(20px);
+      fill: currentColor;
+      vertical-align: middle;
+    } //svg
+
+    a:not(:first-of-type) { 
+      margin-left: 18px;
+    }
+
+  }
+
+}

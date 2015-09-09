@@ -7,7 +7,7 @@
 
 <?php include( "_objects/slide_menu.php"); ?>
 <?php include( "_objects/status.php"); ?>
-
+<?php include( "_objects/social.php"); ?>
 <div class='main'>
   </div>
 
@@ -68,39 +68,6 @@
     </div>
   </div>
 
-  <div class='social-section'>
-    <div class='wrapper'>
-      <div class='instagram-post social'>
-        <img class='' src="http://placehold.it/300x300">
-      </div>
-      <div class='twitter-post social'>
-        <img src="http://placehold.it/300x300">
-        <p>Not joking when I say @TheEggmanCanada was the BEST meal we had while visiting Toronto.</p>
-        <svg class='twitter-icon'><use xlink:href="#twitter-icon"></use></svg>
-      </div>
-      <div class='instagram-post social'>
-        <img class='' src="http://placehold.it/300x300">
-      </div>
-      <div class='instagram-post social'>
-        <img class='' src="http://placehold.it/300x300">
-      </div>
-      <div class='instagram-post social'>
-        <img class='' src="http://placehold.it/300x300">
-      </div>
-    </div>
-  </div>
-
-  <div class='share-section'>
-    <div class='wrapper'>
-      <a href='#'>#DOYOUKNOWTHEEGGMAN</a>
-      <div class='share'>
-        <span>Follow the eggman</span>
-        <svg class='facebook-icon'><use xlink:href="#facebook-icon"></use></svg>
-        <svg class='twitter-icon'><use xlink:href="#twitter-icon"></use></svg>
-        <svg class='instagram-icon'><use xlink:href="#instagram-icon"></use></svg>
-      </div>
-    </div>
-  </div>
 
   <div class='media-section'>
     <div class='wrapper'>
