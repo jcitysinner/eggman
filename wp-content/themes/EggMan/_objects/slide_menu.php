@@ -1,10 +1,10 @@
 
-<section class='menu-section'>
+<section class="menu-section">
 
 <h1>Today's Menu</h1>
 
-  <div class='menu-wrap'> 
-    <div class='menu'>
+  <div class="menu-wrap"> 
+    <div class="menu">
 
     <?php 
       $args=array(
@@ -26,7 +26,7 @@
         $url = wp_get_attachment_image_src($image_id,'post_card_large', true)[0];
     ?>
       <div <?php post_class('item'); ?>  id="post-<?php the_ID(); ?>">
-        <div class='img-wrap'><img src="<?php echo $url ?>"></div>
+        <div class="img-wrap"><img src="<?php echo $url ?>"></div>
         <h2><?php the_title(); ?></h2>
       </div>
 
@@ -53,12 +53,12 @@
     <?php } endwhile; endif; wp_reset_query(); ?>
 
     <div class="menu-arrow right">
-      <svg class='arrow-right'><use xlink:href="#arrow-right"></use></svg>
+      <svg class="arrow-right"><use xlink:href="#arrow-right"></use></svg>
     </div>
 
     <div class="menu-arrow left">
-      <svg class='arrow-right'><use xlink:href="#arrow-left"></use></svg>
+      <svg class="arrow-right"><use xlink:href="#arrow-left"></use></svg>
     </div>
 
   </div>
-</div>
+</section>

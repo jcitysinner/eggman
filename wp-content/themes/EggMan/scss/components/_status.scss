@@ -1,0 +1,238 @@
+
+.status {
+  @include justifyed;
+  background-color: $yellow;
+  border-top: solid 1px $white;
+  color: $light-blue;
+  padding: 0 18px;
+  position: relative;
+  z-index: 100;
+
+  @include breakpoint($sm-down) { 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  a {
+    @include linkcolor($light-blue, darken); 
+  }
+
+
+
+
+
+//////// Open State
+  &.open {
+
+    @include breakpoint($md-up) { 
+      padding: 0 24px 0 150px;
+    }
+
+    .status-icon {
+
+      @include breakpoint($sm-down) { 
+        @include position(absolute, -47px -10px null null);
+        height: 48px;
+      }
+
+      @include breakpoint($md-up) { 
+        @include position(absolute, null null 0 24px);
+        height: 65px;
+      }
+
+      svg {
+        fill: $yellow;
+
+        @include breakpoint($md-up) { 
+          fill: $white;
+          opacity: .7;
+        }
+      }// svg
+
+    } //statusicon
+  } // open
+
+
+
+
+/////// Soon state
+
+  &.soon {
+    @include background(linear-gradient(-180deg, $yellow 0%, shade($yellow, 20%) 90%));
+
+    @include breakpoint($md-up) { 
+      padding: 0 24px 0 150px;
+    }
+
+    .status-icon {
+
+      @include breakpoint($sm-down) { 
+        @include position(absolute, -34px -10px null null);
+        height: 35px;
+      }
+
+      @include breakpoint($md-up) { 
+        @include position(absolute, null null 0 24px);
+        height: 50px;
+      }
+
+      svg {
+        @include animation(sunPop 1.5s $ease-out-quint forwards);
+        fill: $yellow;
+
+        @include breakpoint($md-up) { 
+          fill: $white;
+          opacity: .5;
+        }
+
+        path:last-child { display: none; }
+      }//svg
+    } //statusicon
+  } // soon
+
+
+
+
+
+
+/////// Closed State
+
+  &.closed {
+    background-color: $dark-blue;
+    color: $white;
+
+    @include breakpoint($md-up) { 
+      padding: 0 24px;
+    }
+
+    a {
+      @include linkcolor($white, darken); 
+    }
+
+  } // closed
+
+
+
+
+////// Defualt Icon State 
+
+  .status-icon {
+    //@include test;
+    overflow: hidden;
+    pointer-events: none;
+
+    svg {
+      //@include test;
+      @include size(76px);
+      @include animation(sunPop 1s $ease-out-back forwards);
+      @include animation-delay(1s);
+      @include transform(translateY(100px));
+
+      @include breakpoint($md-up) { 
+        @include size(100px);
+      }
+
+      path:first-child {
+        @include transform-origin(center center);
+        @include animation(sunBody 100s linear 50);
+      }
+
+      path:last-child {
+        @include transform-origin(center center);
+        @include transform(translateY(50px));
+        @include animation(sunEyes .5s $ease-out-back forwards);
+        @include animation-delay(1.5s);
+      }
+    }
+  }
+
+
+
+
+
+
+
+///////// Text Descriptor
+
+  p {
+    //@include test;
+    font-weight: $medium;
+    font-size: 13px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 9px 0;
+
+    @include breakpoint($md-up) { 
+      font-size: 18px;
+    }
+
+    span {
+      display: block;
+      font-size: 10px;
+      
+      @include breakpoint($md-up) { 
+        font-size: 13px;
+      }
+    }
+
+  }
+
+
+
+/////// Map / Future Icons
+
+  .controls {
+    //@include test;
+    display: inline-block;
+    vertical-align: middle;
+
+    svg {
+      @include size(15px);
+      vertical-align: middle;
+      fill: currentColor;
+
+      @include breakpoint($md-up) { 
+        @include size(20px);
+        margin-top: -5px;
+      }
+    }
+
+    a {
+      display: inline-block;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 19px;
+      padding: 10px;
+      vertical-align: middle;
+
+      &:nth-child(2) {
+        position: relative;
+        margin-left: 12px;
+        
+        &:before {
+          @include transform(translateY(-50%));
+          content: '';
+          height: 30%;
+          width: 1px;
+          opacity: .5;
+          border-left: 1px solid currentColor;
+          position: absolute;
+          left: -7px;
+          top: 50%;
+        }
+      }
+    }
+
+    span {
+      margin-left: 12px;
+
+      @include breakpoint($sm-down) { 
+        display: none;
+      }
+    }
+
+  } //controls
+
+}

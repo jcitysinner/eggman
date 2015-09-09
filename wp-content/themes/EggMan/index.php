@@ -3,36 +3,22 @@
 
 
 
-<div class='main'>
+
 
 <?php include( "_objects/slide_menu.php"); ?>
+<?php include( "_objects/status.php"); ?>
 
-
+<div class='main'>
   </div>
 
-  <div class='hero-section'>
+<!--   <div class='hero-section'>
     <div class='wrapper'>
       <h2>Toronto's First <span>( and only )</span>Breakfast Food Truck</h2>
       <img src='img/raster/compressed/truck.png'>
     </div>
   </div>
 
-  <div class='status-section'>
-    <div class='wrapper'>
-      <div class='status'>
-        <svg class='sun-icon'><use xlink:href="#sun-icon"></use></svg>
-        <!-- <svg class='closed'><use xlink:href="#open"></use></svg> -->
-        <p><span>Now Open till 10am</span>Wilson St W & Bathurst Ave N</p>
-      </div>
-      <div class='controls'>
-        <a href='#'><svg class='maps-icon'><use xlink:href="#maps-icon"></use></svg>
-        <span>View on Google Maps</span></a>
-        <a href='#'><svg class='calendar-icon'><use xlink:href="#calendar-icon"></use></svg>
-        <span>See Future Details</span></a>
-      </div>
-    </div>
-  </div>
-
+ -->
   <div class='about-section'>
     <div class='wrapper'>
       <h2>What Makes The Eggman So Delicious?</h2>

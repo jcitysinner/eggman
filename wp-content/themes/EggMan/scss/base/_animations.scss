@@ -8,3 +8,41 @@
   }
   
 }
+
+
+@include keyframes(sunBody) {
+  0% {
+    @include transform(scale(.95) rotate(0deg));
+  }
+
+  50% {
+    @include transform(scale(1) rotate(180deg));
+  }
+
+  100% {
+    @include transform(scale(.95) rotate(360deg));
+  }
+
+}
+
+@include keyframes(sunEyes) {
+  0% {
+    @include transform(scale(.5) translateY(50px));
+  }
+
+  100% {
+    @include transform(scale(1) translateY(0));
+  }
+
+}
+
+@include keyframes(sunPop) {
+  0% {
+    @include transform(translateY(150px));
+  }
+
+  100% {
+    @include transform(translateY(10px));
+  }
+
+}
