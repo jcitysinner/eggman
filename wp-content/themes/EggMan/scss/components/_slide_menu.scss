@@ -1,0 +1,114 @@
+
+.menu-section {
+  //@include test;
+  padding: 18px 0 0;
+  max-width: 100%;
+
+  h1 {
+    font-weight: 100;
+    color: $grey;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2.2px;
+    text-align: center; 
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu-wrap {
+    //@include test;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .menu {
+    //@include test;
+    font-size: 0;
+    line-height: 0;
+    padding-bottom: 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+
+  .item {
+    //@include test;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    margin: 0 6px;
+    cursor: pointer;
+    
+
+    @include breakpoint($md-up) {
+      width: 130px;
+      margin: 0 12px;
+    }
+
+    &:first-of-type {
+      margin-left: 12px;
+
+      @include breakpoint($md-up) {
+        margin-left: 36px;
+      }
+
+    }
+
+    &:last-of-type {
+      margin-right: 12px;
+      
+      @include breakpoint($md-up) {
+        margin-right: 36px;
+      }
+    }
+
+
+    h2 {
+      font-weight: 500;
+      font-size: 12px;
+      color: $grey;
+      margin: 6px 0 0;
+      padding: 0;
+      line-height: 1em;
+
+      @include breakpoint($md-up) {
+        font-size: 14px;
+      }
+    }
+
+  } //Item
+
+  .img-wrap {
+    @include product(95%, 95%);
+  }
+
+} // Menu Section
+
+
+.menu-arrow {
+  @include position(absolute, 0 null 0 null);
+  width: 45px;
+  pointer-events: none;
+
+  svg {
+    @include size(15px);
+    @include filter(drop-shadow(0 0 5px $white));
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  &.left {
+    @include background-image(linear-gradient(left, $white 13%, transparent 100%));
+    left: 0;
+    direction: rtl;
+  }
+
+  &.right {
+    @include background-image(linear-gradient(right, $white 13%, transparent 100%));
+    right: 0;
+  }
+
+} // menuarrow
+
+

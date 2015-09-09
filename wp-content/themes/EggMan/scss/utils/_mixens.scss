@@ -150,3 +150,24 @@
     }
   }
 }
+
+
+
+
+
+
+@mixin product($size:relative, $coverage:vertical) {
+  width: $size;
+  padding-top: $size;
+  height: 0;
+  position: relative;
+  margin: 0 auto;
+  
+  img {
+    @include position(absolute, 0 0 0 0);
+    @include size(auto);
+    margin: auto;
+    max-width: $coverage;
+    max-height: $coverage;
+  }
+}  

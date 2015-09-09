@@ -1,0 +1,1 @@
+{"version":3,"file":"main.min.js","sources":["js/main.js"],"names":["$","document","ready","menuWidth","each","this","outerWidth"],"mappings":"AAAAA,EAAEC,UAAUC,MAAM,WAEhB,GAAIC,GAAY,CAEhBH,GAAE,eAAeI,KAAK,WAEpBD,GAAwBH,EAAEK,MAAMC,YAAW"}

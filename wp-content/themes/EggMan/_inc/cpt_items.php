@@ -30,6 +30,6 @@ $slug = 'items';
 }
 add_action( 'init', 'register_cpt_items' );
 
-//require_once ( 'sessions/_metaboxes.php' ); 
+require_once ( 'items/_metaboxes.php' ); 
 
 ?>

@@ -8,6 +8,6 @@ $(document).ready(function() {
 
   });
 
-  $('.menu').width(menuWidth);
+  //$('.menu').width(menuWidth);
 
 });

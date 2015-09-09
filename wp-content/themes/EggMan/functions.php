@@ -112,23 +112,21 @@ require_once ( '_inc/theme-options.php' );
 --------------------------------- */
 
 
-// if ( file_exists(  __DIR__ . '/_inc/cmb2/init.php' ) ) {
-// 	require_once  __DIR__ . '/_inc/cmb2/init.php';
-// } elseif ( file_exists(  __DIR__ . '/_inc/CMB2/init.php' ) ) {
-// 	require_once  __DIR__ . '/_inc/CMB2/init.php';
-// }
+if ( file_exists(  __DIR__ . '/_inc/cmb2/init.php' ) ) {
+	require_once  __DIR__ . '/_inc/cmb2/init.php';
+} elseif ( file_exists(  __DIR__ . '/_inc/CMB2/init.php' ) ) {
+	require_once  __DIR__ . '/_inc/CMB2/init.php';
+}
 
-// function eggman_metaboxes($meta_boxes){
+function eggman_metaboxes($meta_boxes){
 	
-// 	$sessions_metaboxes = sessions_metaboxes();
-// 	$sponsors_metaboxes = sponsors_metaboxes();
-// 	$users_metaboxes = users_metaboxes();
-	
-// 	$meta_boxes = array_merge( $sessions_metaboxes, $sponsors_metaboxes, $users_metaboxes );
-// 	return $meta_boxes;	
-// }
+	$items_metaboxes = items_metaboxes();
 
-// add_filter( 'cmb2_meta_boxes', 'eggman_metaboxes' );
+	$meta_boxes = array_merge( $items_metaboxes);
+	return $meta_boxes;	
+}
+
+add_filter( 'cmb2_meta_boxes', 'eggman_metaboxes' );
 
 
 /* ---------------------------------
