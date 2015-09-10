@@ -1,0 +1,81 @@
+
+
+.social {
+  background-image: url('img/raster/compressed/social-bg.jpg');
+  padding: 18px 0 0;
+  text-align: center;
+
+  >.wrapper {
+    @include test;
+    //@include justifyed;
+    @include align-items(stretch);
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(flex-start);
+    @include flex-wrap(nowrap);
+
+    margin-bottom: 18px;
+
+    @include break($max: 1200px) {
+      @include flex-wrap(wrap);
+    }
+  }
+
+  .social-post {
+    @include flex(1);
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    width: 15%;
+    border: solid 2px $white;
+    color: $white;
+    background-color: rgba(shade($red, 50%), .5);
+    margin: 0 9px;
+
+    
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+
+    &.twitter {
+      @include flex(2.25);
+      padding: 8px;
+      width: 35%;
+
+      img {
+        width: 41%;
+      }
+
+      svg {
+        @include size(14px);
+        @include position(absolute, null 12px 12px null);
+      }
+
+      p {
+        @include calc(max-width, '100% - 50%');
+        vertical-align: middle;
+        font-size: 15px;
+        letter-spacing: .87px;
+        color: $white;
+        font-weight: $medium;
+        line-height: 20px;
+        display: inline-block;
+        margin: 0 0 0 15px;
+        text-align: left;
+      }
+
+    } //twitter
+
+  } //social-post
+
+} //social

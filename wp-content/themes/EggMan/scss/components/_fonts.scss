@@ -1,16 +1,11 @@
-@font-face {
-  font-family: avenir;
-  src: url('fonts/Avenir-Next.ttc');
-}
+
 
 @font-face {
   font-family: edosz;
   src: url('fonts/edosz.ttf');
 }
 
-@font-face {
-  font-family: gillsans;
-  src: url('fonts/GillSans.ttc');
-}
+@include font-face("avenir", "fonts/Avenir-Next", $file-formats: ttc);
+@include font-face("gillsans", "fonts/GillSans", $file-formats: ttc);
 
 
