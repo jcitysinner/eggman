@@ -29,3 +29,23 @@ a {
   text-decoration: none;
 }
 
+%pill {
+  display: inline-block;
+  color: $white;
+  background-color: $red;
+  padding: .6em 4em;
+  letter-spacing: .1em;
+  border-radius: 40px;
+}
+
+%red-pill {
+  color: $white;
+  background: $red;
+
+  &:hover {
+    background: $white;
+    color: $red;
+  }
+
+}
+

@@ -99,6 +99,7 @@ add_action('wp_enqueue_scripts', 'eggman_styles');
 --------------------------------- */
 add_theme_support( 'post-thumbnails' );
 require_once ( '_inc/cpt_items.php' );
+require_once ( '_inc/cpt_testimonial.php' );
  
 /* ---------------------------------
 	Theme Options

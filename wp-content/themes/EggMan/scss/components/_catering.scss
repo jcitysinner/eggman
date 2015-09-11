@@ -1,0 +1,128 @@
+
+.catering {
+  background-image: url('img/raster/compressed/cater-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  padding: 100px 0;
+
+  .wrapper {
+    @include justifyed;
+  }
+
+  .content-column {
+    //@include test;
+    overflow: visible;
+    text-align: center;
+    vertical-align: top;
+    
+
+    @include breakpoint($md-up) {
+      display: inline-block;
+      width: 324px;
+      text-align: left;
+    }
+
+
+    h1 {
+      @include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
+      font-family: $display;
+      font-size: 100px;
+      letter-spacing: -.02em;
+      color: $white;
+      margin: 0;
+      opacity: .9;
+      white-space: nowrap;
+      margin-top: -.1em;
+      
+      @include breakpoint($md-up) {
+        width: 120%;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      color: $yellow;
+      letter-spacing: .27px;
+      font-style: italic;
+      letter-spacing: .1em;
+      margin-bottom: 24px;
+      max-width: 350px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    a {
+      @extend %pill;
+      @extend %red-pill;
+      font-size: 17px;
+      margin-top: 12px;
+    }
+  } // Cont col
+
+
+
+  .testimonial-column {
+    //@include test;
+    vertical-align: top;
+    text-align: left;
+    margin-top: 24px;
+    display: none;
+    
+    @include breakpoint($md-up) {
+      display: inline-block;
+      width: 60%;
+    }
+
+    &.hasimg {
+      padding-right: 190px;
+      position: relative;
+    }
+    
+    .img-wrap {
+      position: absolute;
+      right: 0;
+      top: 15%;
+      width: 400px;
+
+      &:hover img {
+        @include transform(scale(1) rotate(0deg));
+        z-index: 100;
+      }
+
+      img {
+        @include transition(all 500ms ease-in-out);
+        @include transform(scale(.43) rotate(5deg));
+        @include transform-origin(right top);
+        // scss-lint:disable all
+        cursor: -webkit-zoom-in; 
+        cursor: -moz-zoom-in;
+        // scss-lint:enable all
+        max-width: 100%;
+        border: 6px solid $white;
+        box-shadow: 1px 1px 15px $black;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      color: $white;
+      letter-spacing: .05em;
+      margin-bottom: 24px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    span {
+      font-size: 14px;
+      color: $white;
+      letter-spacing: .05em;
+      margin-bottom: 24px;
+      opacity: .8;
+    }
+  } // testimonial col
+
+
+
+} // catering

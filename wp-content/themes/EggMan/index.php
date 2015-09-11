@@ -7,7 +7,10 @@
 
 <?php include( "_objects/slide_menu.php"); ?>
 <?php include( "_objects/status.php"); ?>
+<?php include( "_objects/catering.php"); ?>
 <?php include( "_objects/social.php"); ?>
+
+
 <div class='main'>
   </div>
 
@@ -52,21 +55,6 @@
     </div>
   </div>
 
-  <div class='contact-section'>
-    <div class='wrapper'>
-      <div class='content-column'>
-        <h2>We Cater</h2>
-        <p>The Eggman right outside your door, your office or your venue.</p>
-        <a href='#'>Contact Us</a>
-      </div>
-      <div class='images'>
-        <img class='' src="http://placehold.it/350x350">
-        <img class='' src="http://placehold.it/350x250">
-        <img class='' src="http://placehold.it/350x350">
-        <img class='' src="http://placehold.it/350x250">
-      </div>
-    </div>
-  </div>
 
 
   <div class='media-section'>
