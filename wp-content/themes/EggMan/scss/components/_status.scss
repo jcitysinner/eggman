@@ -142,8 +142,8 @@
       path:last-child {
         @include transform-origin(center center);
         @include transform(translateY(50px));
-        @include animation(sunEyes .5s $ease-out-back forwards);
-        @include animation-delay(1.5s);
+        @include animation(sunEyes 4s linear forwards);
+        @include animation-delay(1.6s);
       }
     }
   }
