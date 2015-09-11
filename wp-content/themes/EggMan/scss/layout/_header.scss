@@ -9,10 +9,12 @@
   font-size: 0;
 
   svg {
-
     width: 247px;
-    height: 40px;
+    height: 30px;
 
+    @include breakpoint($md-up) { 
+      height: 40px;
+    }
   }
 
 } 
