@@ -22,7 +22,7 @@ $slug = 'testimonial';
     'description'   => 'profile',
     'public'        => true,
     'hierarchical' => false,
-    'menu_icon'   => 'dashicons-carrot',
+    'menu_icon'   => 'dashicons-testimonial',
     'supports'      => array( 'title', 'editor', 'thumbnail', 'custom-fields'),
     'has_archive'   => false
   );
