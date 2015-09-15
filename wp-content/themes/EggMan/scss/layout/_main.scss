@@ -1,16 +1,12 @@
 
-
-div.hero-section {
+.hero-section {
   @include background-image(linear-gradient(left top, left bottom, color-stop(0%, $white), color-stop(55%, $white), color-stop(55%, $yellow), color-stop(100%, $yellow)));
   position: relative;
   line-height: 0;
   font-size: 0;
 
   h2 {
-
     @include alignment(absolute, center);
-
-    /* Toronto’s FIrst : */
     font-family: $display;
     font-size: 75px;
     color: $white;
@@ -33,65 +29,6 @@ div.hero-section {
 
 }
 
-
-div.about-section {
-
-  padding: 38px;
-  background-color: $dark-blue;
-  color: $white;
-  text-align: center;
-  background-image: url('img/raster/compressed/about-bg.jpg');
-
-  h2 {
-
-    font-family: $header;
-    font-size: 28px;
-    line-height: 33px;
-    display: inline-block;
-    margin: 0 auto;
-    padding: 16px 30px;
-    border-top: solid 1px $white;
-    border-bottom: solid 1px $white;
-    text-transform: uppercase;
-    font-weight: normal;
-
-  }
-
-  .about-wrap {
-
-    @include justifyed();
-    margin-top: 37px;
-
-  }
-
-  .about-column {
-
-    width: 30%;
-    display: inline-block;
-    vertical-align: top;
-    text-align: center;
-
-    h3 {
-
-      font-family: $header;
-      font-size: 25px;
-      line-height: 30px;
-      text-transform: uppercase;
-      font-weight: normal;
-
-    }
-
-    p {
-
-      font-family: $sans-serif;
-      font-size: 18px;
-      line-height: 25px;
-
-    }
-
-  }
-
-}
 
 div.team-section {
 
@@ -162,85 +99,3 @@ div.team-section {
 }
 
 
-
-
-.media-section {
-
-
-  background-color: $dark-blue;
-  padding: 35px 0;
-  color: $white;
-  font-size: 0;
-  line-height: 0;
-
-  a {
-
-    color: $white;
-
-  }
-
-  .media-contact {
-
-    width: 22%;
-    display: inline-block;
-    vertical-align: top;
-
-    h2 {
-
-      margin: 0;
-      font-family: $sans-serif;
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 27px;
-      text-transform: uppercase;
-
-    }
-
-    p {
-
-      opacity: .44;
-      font-size: 13px;
-      line-height: 18px;
-      margin-top: 10px;
-      margin-bottom: 40px;
-
-    }
-
-    a {
-
-      font-size: 11px;
-      line-height: 15px;
-
-    }
-
-  }
-
-  .media-links {
-
-    @include justifyed();
-    width: 78%;
-    display: inline-block;
-    vertical-align: top;
-    padding-left: 50px;
-
-    a {
-
-      font-size: 13px;
-      line-height: 18px;
-      display: inline-block;
-      width: 48%;
-      vertical-align: top;
-      margin-bottom: 26px;
-
-      span {
-
-        display: block;
-        color: $red;
-
-      }
-
-    }
-
-  }
-
-}

@@ -1,0 +1,152 @@
+
+
+.press {
+  background-image: url('img/raster/compressed/cater-bg.jpg');
+  background-color: shade($dark-blue, 10%);
+  background-size: cover;
+  background-position: center center;
+  color: $white;
+  padding: 50px 0;
+
+  strong {
+    @include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
+    font-family: $header;
+    font-size: 62px;
+    color: $white;
+    margin: 0;
+    opacity: .8;
+    text-transform: uppercase;
+    margin-top: -.1em;
+    font-weight: $book;
+    line-height: .9em;
+    //text-shadow: 0 -2px 0 $dark-blue;
+
+    @include breakpoint($md-only) { 
+      font-size: 50px;
+    }
+    
+
+
+    i {
+      font-style: normal;
+      font-size: 1.15em;
+    }
+  }
+
+  a {
+    @include linkcolor($yellow, darken);
+  }
+
+  span {
+    //@include test;
+    display: block;
+    margin: 18px 6px;
+  }
+
+  h2 {
+    margin: 0 0 6px;
+    font-size: 18px;
+    display: block;
+  }
+
+  ul {
+    //@include test;
+    @include listreset;
+    @include align-items(stretch);
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(flex-start);
+    @include flex-flow(row-reverse wrap);
+    
+    li {
+      //@include test;
+      @include transition (all .2s ease-in-out);
+      font-size: 14px;
+      margin: 6px;
+
+      svg {
+        @include size(10px);
+        display: inline-block;
+        vertical-align: middle;
+        fill: currentColor;
+      }
+
+      &:not(:first-of-type) {
+        @include calc(width, '(100% - 48px) / 4');
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+        background-color: rgba($black, .1);
+
+        @include breakpoint($md-only) { 
+          @include calc(width, '(100% - 48px) / 3');
+        }
+
+        @include breakpoint($sm-only) { 
+          @include calc(width, '(100% - 48px) / 2');
+        }
+
+        @include breakpoint($xs) { 
+          width: 100%;
+        }
+
+
+        &:hover {
+          background-color: rgba($dark-blue, .9);
+        }
+
+        &.last {
+          background-color: rgba($red, 0); 
+        }
+      }
+
+
+      &:first-of-type {
+        //@include test;
+        @include justify-content(center);
+        width: 48.75%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        @include breakpoint($md-only) { 
+          width: 64.75%;
+        }
+
+        @include breakpoint($sm-down) { 
+          width: 100%;
+        }
+
+        span {
+          padding: 0;
+        }
+
+        p {
+          font-size: 18px;
+          margin: 6px 0 0;
+        }
+
+      } // First
+      
+
+    } // li
+
+  
+  }
+
+
+}
+
+
+
+.lmore {
+  @extend %pill;
+  @extend %blue-pill;
+  display: inline-block;
+  text-align: center;
+  font-size: 15px;
+  margin: 24px auto;
+}
+
+
+

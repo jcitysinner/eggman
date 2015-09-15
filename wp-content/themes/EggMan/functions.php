@@ -72,7 +72,7 @@ add_action( 'admin_enqueue_scripts', 'wpa_scripts' );
 function eggman_styles()
 {	
 	wp_enqueue_style('eggman_reset', get_stylesheet_directory_uri().'/style.css', false, '1.0');	
-  wp_enqueue_style('eggman_reset', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600|Montserrat:400,700', false, '1.0');  
+  wp_enqueue_style('eggman_reset', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600|Montserrat:400,700|Chau+Philomene+One', false, '1.0');  
 }
 add_action('wp_enqueue_scripts', 'eggman_styles');
 
@@ -100,7 +100,8 @@ add_action('wp_enqueue_scripts', 'eggman_styles');
 add_theme_support( 'post-thumbnails' );
 require_once ( '_inc/cpt_items.php' );
 require_once ( '_inc/cpt_testimonial.php' );
- 
+require_once ( '_inc/cpt_press.php' );
+
 /* ---------------------------------
 	Theme Options
 --------------------------------- */ 
@@ -122,8 +123,9 @@ if ( file_exists(  __DIR__ . '/_inc/cmb2/init.php' ) ) {
 function eggman_metaboxes($meta_boxes){
 	
 	$items_metaboxes = items_metaboxes();
+	$press_metaboxes = press_metaboxes();
 
-	$meta_boxes = array_merge( $items_metaboxes);
+	$meta_boxes = array_merge( $items_metaboxes, $press_metaboxes);
 	return $meta_boxes;	
 }
 

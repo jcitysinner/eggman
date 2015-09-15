@@ -5,12 +5,47 @@ body {
   font-family: $sans-serif;
   font-weight: normal;
   -webkit-font-smoothing: antialiased !important;
+
+
+  &:after {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+    display: block;
+
+    @include breakpoint($xs) {
+      content: 'xs';
+      background: $light-blue;
+    }
+
+    @include breakpoint($sm) {
+      content: 'sm';
+      background: $black;
+    }
+
+    @include breakpoint($md) {
+      content: 'md';
+      background: $dark-blue;
+    }
+
+    @include breakpoint($lg) {
+      content: 'lg';
+      background: $red;
+    }
+
+    @include breakpoint($xl) {
+      content: 'xl';
+      background: $dark-red;
+    }
+
+  }
 }
 
 .wrapper {
   max-width: 1178px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 24px; 
   position: relative;
 } 
 
@@ -30,12 +65,16 @@ a {
 }
 
 %pill {
+  @include transition (all .2s ease-in-out);
   display: inline-block;
   color: $white;
   background-color: $red;
   padding: .6em 4em;
   letter-spacing: .1em;
   border-radius: 40px;
+  cursor: pointer;
+  font-family: $header;
+  text-transform: uppercase;
 }
 
 %red-pill {
@@ -49,3 +88,13 @@ a {
 
 }
 
+%blue-pill {
+  color: $white;
+  background: $dark-blue;
+
+  &:hover {
+    background: $white;
+    color: $dark-blue;
+  }
+
+}
