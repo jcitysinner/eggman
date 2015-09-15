@@ -5,8 +5,9 @@
   background-position: center center;
   padding: 100px 0;
 
-  .wrapper {
+  >.wrapper {
     @include justifyed;
+    padding: 0 48px;
   }
 
   .content-column {
@@ -33,6 +34,7 @@
       opacity: .9;
       white-space: nowrap;
       margin-top: -.1em;
+      font-weight: $book;
       
       @include breakpoint($md-up) {
         width: 120%;
@@ -69,12 +71,13 @@
     display: none;
     
     @include breakpoint($md-up) {
+      @include calc(width, '100% - 480px');
       display: inline-block;
-      width: 60%;
+      //width: 60%;
     }
 
     &.hasimg {
-      padding-right: 190px;
+      padding-right: 150px;
       position: relative;
     }
     
@@ -91,7 +94,7 @@
 
       img {
         @include transition(all 500ms ease-in-out);
-        @include transform(scale(.43) rotate(5deg));
+        @include transform(scale(.3) rotate(5deg));
         @include transform-origin(right top);
         // scss-lint:disable all
         cursor: -webkit-zoom-in; 
@@ -109,7 +112,7 @@
       letter-spacing: .05em;
       margin-bottom: 24px;
 
-      &:first-child {
+      &:first-of-type {
         margin-top: 0;
       }
     }
