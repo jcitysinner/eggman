@@ -1,0 +1,76 @@
+ 
+.hero {
+  //@include test;
+  @include calc(height, '90vh - 80px - 62px - 200px');
+  position: relative;
+  background-image: url('img/raster/compressed/truck.png');
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  //height: 100vh;
+
+  @include breakpoint($sm-down) { 
+    @include calc(height, '100vh - 70px - 51px - 164px');
+  }
+
+  &:after {
+    background-color: $yellow;
+    height: 50%;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  .wrapper {
+   //@include test;
+
+    position: relative;
+    height: 100%;
+  }
+
+  h1 {
+    @include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
+    @include alignment(absolute, vertical);
+    font-family: $display;
+    font-size: 75px;
+    color: $white;
+    text-shadow: 0 1px 30px $black;
+    width: 100%;
+    margin: 0;
+    font-weight: $book;
+    text-align: center;
+
+    @include breakpoint($sm-only) { 
+      font-size: 60px;
+    }
+
+    @include breakpoint($xs) { 
+      font-size: 45px;
+    }
+
+    span {
+      margin-top: 3px;
+      margin-bottom: -3px;
+      font-family: $header;
+      display: block;
+      text-transform: uppercase;
+      font-size: .2em;
+      color: $yellow;
+      opacity: .8;
+      line-height: .7em;
+
+      @include breakpoint($xs) { 
+        font-size: .4em;
+      }
+    }
+
+
+
+
+
+  }
+
+}

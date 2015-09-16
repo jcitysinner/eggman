@@ -1,5 +1,5 @@
 <?php 
-$status = open; // Soon or Closed
+$status = closed; // Soon or Closed
 ?>
 
 <section class="status <?php echo $status?>">

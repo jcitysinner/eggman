@@ -1,33 +1,4 @@
 
-.hero-section {
-  @include background-image(linear-gradient(left top, left bottom, color-stop(0%, $white), color-stop(55%, $white), color-stop(55%, $yellow), color-stop(100%, $yellow)));
-  position: relative;
-  line-height: 0;
-  font-size: 0;
-
-  h2 {
-    @include alignment(absolute, center);
-    font-family: $display;
-    font-size: 75px;
-    color: $white;
-    line-height: 82px;
-    text-shadow: 0 1px 3px $black;
-    width: 100%;
-    margin: 0;
-    text-align: center;
-
-    span {
-
-      display: block;
-      font-size: 20px;
-      color: $yellow;
-      line-height: 23px;
-
-    }
-
-  }
-
-}
 
 
 div.team-section {
