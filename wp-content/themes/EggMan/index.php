@@ -3,6 +3,7 @@
 <?php include( "_objects/hero.php"); ?>
 <?php include( "_objects/status.php"); ?>
 <?php include( "_objects/about.php"); ?>
+<?php include( "_objects/schedule.php"); ?>
 <?php include( "_objects/catering.php"); ?>
 <?php include( "_objects/social.php"); ?>
 <?php include( "_objects/media.php"); ?>

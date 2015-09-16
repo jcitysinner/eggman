@@ -1,0 +1,181 @@
+
+
+.schedule {
+  //@include test;
+  background-color: $black;
+  overflow: hidden;
+  padding: 50px 0;
+  background-image: url('img/raster/compressed/road.jpg');
+  background-size: cover;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+
+  .wrapper {
+    //@include test;
+    @include justifyed;
+
+
+  }
+
+  small {
+    color: $yellow;
+    font-size: 12px;
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+  }
+  
+  a {
+    @include linkcolor($red, darken);
+    display: block;
+    font-size: 14px;
+    font-weight: $medium;
+    margin-top: 24px;
+  }
+
+  svg {
+    @include size(15px);
+    fill: currentColor;
+    vertical-align: middle;
+  }
+
+
+  h1 {
+    //@include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
+    font-family: $header;
+    font-size: 52px;
+    color: $white;
+    margin: 0 0 50px;
+    opacity: .8;
+    text-transform: uppercase;
+    font-weight: $book;
+    //display: inline-block;
+    vertical-align: middle;
+
+
+    @include breakpoint($sm-only) { 
+      font-size: 40px;
+    }
+
+    @include breakpoint($xs) { 
+      font-size: 32px;
+      margin: 24px 0;
+    }
+  }
+
+
+
+  dl {
+    //@include test;
+    @include listreset;
+    @include justifyed;
+    display: inline-block;
+    vertical-align: middle;
+    width: 70%;
+    margin-left: 30%;
+
+    @include breakpoint($md-only) { 
+      margin-left: 10%;
+      width: 90%;
+    }
+
+    @include breakpoint($sm-down) {
+      margin-left: 0;
+      width: 100%;
+    } 
+
+  }
+
+
+  dt {
+    //@include test;
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+    font-family: $header;
+    font-size: 22px;
+    color: $yellow;
+    margin: 0;
+    opacity: .8;
+    text-transform: uppercase;
+    font-weight: $book;
+    position: relative;
+    //white-space: nowrap;
+
+    @include break($max: 900px) {
+      width: 100%;
+      display: block;
+      text-align: left;
+      padding-top: 12px;
+      margin-bottom: 24px;
+    }
+
+    &:before {
+      right: 0;
+      top: 0;
+      position: absolute;
+      display: block;
+      content: '';
+      width: 500%;
+      height: 1px;
+      background-color: $yellow;
+      opacity: .9;
+
+      @include break($max: 900px) {
+        width: 100%;
+      }
+
+    }
+  }
+
+  dd {
+    //@include test;
+    @include justifyed;
+    margin: 0;
+    width: 70%;
+    display: inline-block;
+
+    @include break($max: 900px) {
+      display: block;
+      width: 100%;
+    }
+
+    div {
+      display: inline-block;
+      width: 45%;
+      text-align: left;
+      background-color: $white;
+      padding: 24px 12px;
+      font-size: 18px;
+      margin-bottom: 10%;
+      vertical-align: top;
+      box-shadow: 1px 1px 5px $black;
+
+      @include break($max: 900px) {
+        width: 48%;
+        margin-bottom: 4%;
+      }
+
+      @include break($max: 600px) {
+        width: 100%;
+        margin-bottom: 4%;
+      }
+
+      strong {
+        font-family: $header;
+        font-size: 30px;
+        color: $black;
+        margin: 0;
+        opacity: .8;
+        text-transform: uppercase;
+        font-weight: $book;
+        display: block;
+      }
+    }
+  }
+
+
+
+}
+
+
