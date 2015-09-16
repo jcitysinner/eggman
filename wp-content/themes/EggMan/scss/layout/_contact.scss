@@ -3,7 +3,7 @@
 .contact {
   //@include test;
   background-image: url('img/raster/compressed/about-bg.jpg');
-  margin-bottom: 100px;
+  overflow: hidden;
 
   .wrapper {
     //@include test;
