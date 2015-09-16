@@ -1,0 +1,158 @@
+
+
+.contact {
+  //@include test;
+  background-image: url('img/raster/compressed/about-bg.jpg');
+  margin-bottom: 100px;
+
+  .wrapper {
+    //@include test;
+    @include align-items(stretch);
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    @include align-content(space-around);
+
+    @include breakpoint($xs) { 
+      display: block;
+      padding: 0;
+    }
+
+  }
+  
+  a {
+    @include linkcolor($yellow, darken);
+    font-weight: $heavy;
+
+    &:not(:first-of-type) {
+      margin-left: 24px;
+    }
+  }
+  
+  svg {
+    @include size(15px);
+    top: 3px;
+    position: relative;
+    fill: currentColor;
+  }
+
+  h1 {
+    @include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
+    font-family: $header;
+    font-size: 52px;
+    color: $white;
+    margin: 12px;
+    opacity: .8;
+    text-transform: uppercase;
+    font-weight: $book;
+
+    @include breakpoint($sm-only) { 
+      font-size: 40px;
+    }
+
+    @include breakpoint($xs) { 
+      font-size: 32px;
+      margin: 24px 0;
+    }
+  }
+
+  h2 {
+    @include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
+    font-family: $header;
+    font-size: 32px;
+    color: $white;
+    margin: 0;
+    opacity: .5;
+    text-transform: uppercase;
+    font-weight: $book;
+    line-height: 1em;
+    display: inline-block;
+    margin-right: 24px;
+    vertical-align: middle;
+    min-width: 130px;
+
+    @include breakpoint($sm-only) { 
+      font-size: 24px;
+      min-width: 100px;
+    }
+
+    @include breakpoint($xs) { 
+      display: block;
+    }
+
+  }
+    
+  span {
+    position: relative;
+    display: block;
+    padding: 18px 24px;
+    z-index: 1;
+
+    &:after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 300%;
+    }
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}):after {
+        background-color: shade($light-blue, 10% * $i);
+      }
+    }
+
+  }
+
+  .col_1 {
+    //@include test;
+
+    position: relative;
+    
+    @include breakpoint($sm-up) { 
+      @include flex(2);
+      @include display(flex);
+      @include justify-content(center);
+      align-items: center;
+      text-align: center;
+    }
+
+    @include breakpoint($sm-only) { 
+      @include flex(1);
+    }
+    
+    @include breakpoint($xs) { 
+      text-align: left;
+      display: block;
+      padding: 0 24px;
+      overflow: hidden;
+    }
+
+
+    &:before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 300%;
+      background: $light-blue;
+    }
+
+    
+  }
+
+  .cols {
+    @include flex(3);
+    //@include test;
+  }
+
+}
+
+
+
+
+
+
