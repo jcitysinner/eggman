@@ -24,7 +24,10 @@
     @include breakpoint($md-only) { 
       font-size: 50px;
     }
-    
+
+    @include breakpoint($sm-down) { 
+      font-size: 32px;
+    }
 
 
     i {
