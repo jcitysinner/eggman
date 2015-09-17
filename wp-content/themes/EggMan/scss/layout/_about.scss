@@ -1,9 +1,97 @@
 
 .about {
-  background-color: $dark-blue;
   color: $white;
-}
+  overflow: hidden;
+  
+  img {
+    display: none;
+  }
 
+  h1 {
+    font-family: $header;
+    font-size: 44px;
+    color: $white;
+    margin: 48px 24px 0;
+    text-transform: uppercase;
+    font-weight: $book;
+    line-height: 1em;
+    text-align: center;
+    border-top: 1px solid tint($red, 10%);
+    padding-top: 24px;
+  }
+
+  h2 {
+    font-family: $header;
+    font-size: 34px;
+    color: $white;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: $book;
+    border-top: 1px solid tint($red, 10%);
+    padding-top: 18px;
+    
+    @include breakpoint($sm-only) { 
+      font-size: 24px;
+    }
+
+    @include breakpoint($xs) { 
+      font-size: 24px;
+    }
+
+    svg {
+      @include size(35px);
+      fill: currentColor;
+      margin-left: 12px;
+      vertical-align: bottom;
+    }
+  }
+
+  .grid {
+    //@include test;
+    @include align-items(stretch);
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(flex-start);
+  }
+
+  .about-column {
+    @include calc(width, '100% / 3');
+    position: relative;
+    font-size: 18px;
+    color: $white;
+    padding: 24px;
+
+    &:after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 300%;
+      width: 300%;
+    }
+
+    &:nth-child(1):after {
+      right: 0;
+    }
+
+    &:nth-child(2):after {
+      left: 0;
+      right: 0;
+    }
+
+    &:nth-child(3):after {
+      left: 0;
+    }
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}):after {
+        background-color: shade($red, 5% * $i);
+      }
+    }
+
+  }
+
+}
 
 
 
@@ -23,6 +111,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 10;
 
     @include breakpoint($sm-down) { 
       display: none;
