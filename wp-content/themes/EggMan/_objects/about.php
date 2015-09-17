@@ -23,14 +23,19 @@
       </div>
     </div>
 
-    <div class='team-'>
-      <img class='' src="img/raster/compressed/chef.png">
-      <div class='team-copy'>
-        <h2>Our Eggselent Team</h2>
-        <p>Only the best of the best get to work aboard the Eggman food truck!</p>
-      </div>
-      <a href='#'>Meet the Team</a>
-    </div>
-
   </div>
+
+
+  <div class="team">
+    <div class="wrapper">
+      <img src="<?php bloginfo('stylesheet_directory'); ?>/img/raster/compressed/chef.png">
+        <div class="col_2">
+          <h1>Tom is The EggMan</h1>
+          <p>Bacon ipsum dolor amet jerky pork belly pancetta shoulder. Flank short loin short ribs jowl turducken brisket meatball alcatra doner tenderloin pig t-bone ball tip. Meatloaf andouille sausage pork chop fatback. </p>
+          <a href="" class="meet">Meet The EggSquad</a>
+        </div>
+    </div>
+  </div>
+
+
 </section>
