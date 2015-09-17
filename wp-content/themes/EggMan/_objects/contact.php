@@ -1,3 +1,8 @@
+<?php 
+$general =  cmb2_get_option('eggman_options', 'general');
+$catering =  cmb2_get_option('eggman_options', 'catering');
+?>
+
 <section class="contact">
 	<div class="wrapper">
 	
@@ -8,11 +13,15 @@
 	<div class="cols">
 		<span>
 			<h2>Catering</h2>
-			<a href="">email@email.com</a>
+			<?php if (!empty($catering)) {
+            echo '<a href="mailto:'.$catering.'">'.$catering.'</a>';
+          	}?>
 		</span>
 		<span>
 			<h2>General</h2>
-			<a href="">general@genral.com</a>
+			<?php if (!empty($general)) {
+            echo '<a href="mailto:'.$general.'">'.$general.'</a>';
+          	}?>
 		</span>
 		<span>
 			<h2>Social</h2>

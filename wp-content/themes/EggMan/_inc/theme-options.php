@@ -118,6 +118,20 @@ class Myprefix_Admin {
         'type' => 'text',
     ) );  
 
+
+    $cmb->add_field( array(
+        'name' => 'Catering Email',
+        'id'   => 'catering',
+        'type' => 'text_email',
+    ) );  
+
+    $cmb->add_field( array(
+        'name' => 'General Email',
+        'id'   => 'general',
+        'type' => 'text_email',
+    ) );  
+
+
   }
 
   /**

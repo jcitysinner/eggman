@@ -1,8 +1,8 @@
 
+$sectioncolor: $dark-blue;
 
 .contact {
   //@include test;
-  background-image: url('img/raster/compressed/about-bg.jpg');
   overflow: hidden;
 
   .wrapper {
@@ -37,7 +37,7 @@
   }
 
   h1 {
-    @include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
+    //@include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
     font-family: $header;
     font-size: 52px;
     color: $white;
@@ -57,7 +57,7 @@
   }
 
   h2 {
-    @include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
+    //@include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
     font-family: $header;
     font-size: 32px;
     color: $white;
@@ -100,7 +100,7 @@
 
     @for $i from 1 through 4 {
       &:nth-child(#{$i}):after {
-        background-color: shade($light-blue, 10% * $i);
+        background-color: shade($sectioncolor, 10% * $i);
       }
     }
 
@@ -138,7 +138,7 @@
       top: 0;
       bottom: 0;
       width: 300%;
-      background: $light-blue;
+      background: $sectioncolor;
     }
 
     

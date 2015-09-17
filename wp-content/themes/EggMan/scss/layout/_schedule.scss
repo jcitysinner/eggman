@@ -111,6 +111,7 @@
     }
 
     &:before {
+      @include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
       right: 0;
       top: 0;
       position: absolute;
