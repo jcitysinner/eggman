@@ -5,7 +5,7 @@
     <div class="content-column">
       <h1>We Cater</h1>
       <p>The Eggman right outside your door, your office or your venue.</p>
-      <a href='#' class="red pill">Contact Us</a>
+      <a href='#' id='contact-open-trigger' class="red pill">Contact Us</a>
     </div>
 
     
@@ -39,3 +39,9 @@
 
   </div>
 </section>
+<div class='contact-form-wrap'>
+  <div class='contact-form wrapper'>
+    <span id='contact-close' class='contact-close'>Close</span>
+    <?php echo do_shortcode( '[contact-form-7 id="37" title="Contact form 1"]' ); ?>
+  </div>
+</div> 

@@ -26,9 +26,9 @@ function eggman_scripts() {
     }
     wp_enqueue_script('main');
 
-    if ( current_user_can( 'manage_options' ) ) {
-      wp_enqueue_script('livereload');
-    }
+    // if ( current_user_can( 'manage_options' ) ) {
+    //   wp_enqueue_script('livereload');
+    // }
 
     wp_deregister_script('jquery');
     wp_register_script('newjquery', "//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js", false, null, true);
@@ -209,6 +209,7 @@ function eggman_ajaxurl() {
 ?>
 	<script type="text/javascript">
 		var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+    var themeurl = '<?php echo get_template_directory_uri(); ?>';
 	</script>
 <?php
 }
