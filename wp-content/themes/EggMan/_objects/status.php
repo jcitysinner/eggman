@@ -2,7 +2,7 @@
 $status = closed; // Soon or Closed
 ?>
 
-<section class="status <?php echo $status?>">
+<section class="status closed">
 
   <?php
     if ($status == 'open' || $status == 'soon') {
@@ -12,7 +12,7 @@ $status = closed; // Soon or Closed
     }
   ?>
 
-  <p><span>Now Open till 10am</span>Wilson St W &amp; Bathurst Ave N</p>
+  <p id='status-copy'><span>OPEN</span>MORE TEXT</p>
 
   <div class="controls">
 

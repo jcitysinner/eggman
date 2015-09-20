@@ -5,7 +5,7 @@
     <h1> Schedule </h1>
 
   <dl>
-
+<!-- 
   <dt>Sept 16</dt>
   <dd>
     <div>
@@ -82,7 +82,7 @@
           <span>View on Google Maps</span>
         </a>
     </div>
-  </dd>
+  </dd> -->
 
 
 </dl>
