@@ -111,7 +111,7 @@ $(document).ready(function() {
 
         }
 
-        var html = $('.schedule dl').html() + '<dt>'+ thisDateMonth +' '+ thisDateDate +'</dt><dd><div><strong>'+thisDateOpenHour+' - '+thisDateCloseHour+'</strong>'+data.open[i].display+'<a href="#"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a></div></dd>';
+        var html = $('.schedule dl').html() + '<dt>'+ thisDateMonth +' '+ thisDateDate +'</dt> <dd><div><strong>'+thisDateOpenHour+' - '+thisDateCloseHour+'</strong>'+data.open[i].display+'<a href="#"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a></div></dd>';
 
         $('.schedule dl').html(html);
 
