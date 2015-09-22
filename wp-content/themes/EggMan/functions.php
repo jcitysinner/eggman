@@ -26,9 +26,9 @@ function eggman_scripts() {
     }
     wp_enqueue_script('main');
 
-    // if ( current_user_can( 'manage_options' ) ) {
-    //   wp_enqueue_script('livereload');
-    // }
+    if ( current_user_can( 'manage_options' ) ) {
+      wp_enqueue_script('livereload');
+    }
 
     wp_deregister_script('jquery');
     wp_register_script('newjquery', "//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js", false, null, true);
@@ -258,6 +258,10 @@ function is_edit_page($new_edit = null){
 }
 
 
+add_action('admin_bar_menu', 'remove_wp_logo', 999);
 
+function remove_wp_logo( $wp_admin_bar ) {
+$wp_admin_bar->remove_node('wp-logo');
+}
 
 ?>
