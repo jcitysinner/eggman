@@ -34,7 +34,7 @@
 		</div>
 
 		<div class="col_1">
-			<h1>Title</h1>
+			<h1><?php the_title();?></h1>
 			<h2><?php echo $sub; ?></h2>
 			<div class="content">
 				<?php the_content();?>
