@@ -45,7 +45,7 @@ $('.type-items').click(function() {
       $container.html(response);
       console.log(response);
       $container.slideDown().addClass('open');
-      $('.item .loading').fadeOut( "slow", function() {
+      $('.item .loading').fadeOut( 'fast', function() {
         $('.item .loading').remove();
       });
     });

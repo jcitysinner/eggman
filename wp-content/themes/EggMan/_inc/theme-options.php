@@ -132,6 +132,13 @@ class Myprefix_Admin {
     ) );  
 
 
+    $cmb->add_field( array(
+        'name' => 'Footer Text',
+        'id'   => 'footer',
+        'type' => 'textarea',
+    ) );  
+
+
   }
 
   /**
