@@ -1,47 +1,26 @@
 $(document).ready(function() {
 
 
-
-    // $('.type-items').click(function() {
-
-    //     var postid = $(this).attr('data-postid');
-    //     var $container = $(".TARGETDIV");
-    //     $container.html("content loading");
-    //     console.log(postid);
-
-
-
-    //     $.post(
-    //       ajaxurl, {
-    //         action: 'my_load_ajax_content',            
-    //         postid: postid
-    //     }, function(data) {
-    //         var $response   =   $(data);
-    //         var postdata    =   $response.filter('#postdata').html();
-    //         $('.TARGETDIV').html(postdata);
-    //         console.log(postdata);
-    //     });
-
-    // });
-
+//
+// Pulls in menu items via ajax
+// Fucntion located in _inc / items / _menu_functions.php
+//
 
 
 $('.type-items').click(function() {
-  
   var postid = $(this).attr('data-postid');
   var $container = $(".menu_target");
   var data = {
-    action: 'menu_item',
-    post_id: postid
+    action: 'menu_item', // Call function
+    post_id: postid // Pass post id data
   };
  
-
   if (!$(this).hasClass('active')) {
     $('.item.active').removeClass('active');
     $(this).toggleClass('active');
     $(this).append( '<div class="loading"><svg><use xlink:href="#egg-cross"></use></svg></div>' );
-    $.post(ajaxurl, data, function(response)
-    {
+    
+    $.post(ajaxurl, data, function(response){
       $container.html(response);
       console.log(response);
       $container.slideDown().addClass('open');
@@ -62,20 +41,10 @@ $(".menu_target").on("click", ".close", function() {
   $(".menu_target").slideToggle().removeClass('open');
 });
 
+// End Menu Ajax Call
 
 
   
-  // var menuWidth = 0;
-
-  // $('.menu .item').each(function() {
-
-  //   menuWidth = menuWidth + $(this).outerWidth(true);
-
-  // });
-
-  //$('.menu').width(menuWidth);
-
-
   // $.ajax({
     
   //   url: "http://data.streetfoodapp.com/1.1/vendors/egg-man",
@@ -120,7 +89,7 @@ $(".menu_target").on("click", ".close", function() {
       var soon = false;
       var currentTime = Date.now() / 1000;
       var info;
-      var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      var months = ['Jan','Feb','March','April','May','June','July','Aug','Sept','Oct','Nov','Dec'];
 
       console.log(currentTime);
       console.log(data.open[0].start);
