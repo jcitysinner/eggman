@@ -27,14 +27,14 @@ function menu_item () {
     $fat_string = '';
     $sodium_string = '';
     $price = '';
-    if(!empty($price_lrg) && !empty($price_reg)){
+    if(($price_lrg !== '0.00') && ($price_reg !== '0.00')){
       $price = '<div class="price"> 
       <span><small>Large:</small> <strong>$'.$price_lrg.'</strong></span> 
       <span><small>Small:</small> <strong>$'.$price_reg.'</strong></span> 
       </div>';
     } else {
       $price = '<div class="price"> 
-      <span><small>Price:</small> <strong>'.$price_lrg.$price_reg.'</strong></span> 
+      <span><small>Price:</small> <strong>$'.$price_reg.'</strong></span> 
       </div>';
     }
     if(!empty($based)){
