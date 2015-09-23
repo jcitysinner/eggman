@@ -17,7 +17,7 @@
 			<svg><use xlink:href="#bacon-cross"></use></svg>
 		</div>
 
-		<small>© 2015 All rights reserved. Thomas Januszewski </small>
+		<small>&copy; <?php echo date("Y"); ?> All rights reserved. Thomas Januszewski </small>
 
 	</div>
 </footer>
