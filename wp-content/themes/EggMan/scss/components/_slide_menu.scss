@@ -93,15 +93,12 @@
       background: rgba($white, .8);
 
       svg {
-        //@include test;
         @include size(30px);
         @include transform-origin(center center);
-        //@include alignment(absolute, vertical);
-        @include animation(loadingSpin 700ms $ease-out-quint 50);
+        @include animation(loadingSpin 700ms ease-in-out 50);
         fill: $light-blue;
         top: 45px;
         position: relative;
-
 
         @include breakpoint($sm-down) {
           top: 30px;

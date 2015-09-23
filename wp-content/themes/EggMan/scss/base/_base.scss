@@ -75,6 +75,21 @@ a {
   cursor: pointer;
   font-family: $header;
   text-transform: uppercase;
+  position: relative;
+
+  .loading {
+    //@include test;
+    display: inline-block;
+    position: absolute;
+    //right: 15px;
+    margin-top: -2px;
+
+    svg {
+      @include size(18px);
+      @include transform-origin(center center);
+      @include animation(loadingSpin 700ms ease-in-out 50);
+    }
+  } // Loading
 }
 
 %red-pill {

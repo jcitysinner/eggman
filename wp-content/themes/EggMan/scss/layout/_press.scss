@@ -1,10 +1,11 @@
 
 
 .press {
+  @include transition (all .2s ease-in-out);
   background-image: url('img/raster/compressed/cater-bg.jpg');
   background-color: shade($dark-blue, 10%);
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   color: $white;
   padding: 50px 0;
 
@@ -63,9 +64,11 @@
     
     li {
       //@include test;
+      @include animation(fadeIn 500ms ease-in-out forwards);
       @include transition (all .2s ease-in-out);
       font-size: 14px;
       margin: 6px;
+      opacity: 0;
 
       svg {
         @include size(10px);

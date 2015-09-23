@@ -1,6 +1,28 @@
 $(document).ready(function() {
 
 
+
+//
+// Pulls in press articles via ajax
+// Fucntion located in ???
+//
+  $('.press .lmore').click(function() {
+    var currentWidth = $(this).outerWidth();
+    console.log(currentWidth);
+    $(this).css("width",currentWidth + "px");
+    $(this).text('Loading\u2026').append( '<div class="loading"><svg><use xlink:href="#egg-cross"></use></svg></div>' );
+
+    $("<div>").load("media-posts", function() {
+      var mdata = $(this).html();
+      $('.press ul .last').fadeOut( "slow", function() {
+        $(".press ul").append(mdata);
+      }); 
+    });
+
+  });
+
+
+
 //
 // Pulls in menu items via ajax
 // Fucntion located in _inc / items / _menu_functions.php
@@ -228,19 +250,8 @@ $(".menu_target").on("click", ".close", function() {
   });
 
 
-  $('.press .lmore').click(function() {
-
-    console.log('test');
 
 
-    $("<div>").load("media-posts", function() {
-          $('.press ul .last').hide();
-          $(".press ul").append($(this).html());
-    });
-
-    //$('.press ul').load('media-posts');
-
-  });
 
 
   $("#contact-open-trigger").click(function(e) {

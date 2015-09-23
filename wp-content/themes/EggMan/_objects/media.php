@@ -1,23 +1,16 @@
-
-
 <section class='press'>
   <div class='wrapper'>
 
-
-
-
     <ul>
-
       <li>
         <span>
             <strong>The <i>EggMan</i> is making waves!</strong> 
-            <!-- <p>Check out people have to say.</p> -->
         </span>
       </li>
 
     <?php 
-      $count_posts = wp_count_posts();
-      if ($count_post > 5) {
+      $count_posts = wp_count_posts('press');
+      if ($count_posts->publish <= 6) {
         $display = 6;
       } else { $display = 5; }
 
@@ -47,16 +40,10 @@
     </li>
 
     <?php endwhile; endif; wp_reset_query();
-      if ($count_post < 5) {
+      if ($count_posts->publish >= 7) {
         echo '<li class="last"><div class="lmore">Load More</div></li>';
       } 
     ?>
-
-    
     </ul>
-    
-    
-
   </div>
 </section>
-
