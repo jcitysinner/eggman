@@ -100,37 +100,11 @@
   background-image: url('img/raster/compressed/cater-bg.jpg');
 
   .wrapper {
-    //@include test;
-    //@include justifyed;
     position: relative;
     padding: 70px 24px 50px;
   }
-  
-  img {
-    width: 20%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
 
-    @include breakpoint($sm-down) { 
-      display: none;
-    }
-  }
 
-  .col_2 {
-    //@include test;
-    width: 60%;
-    margin-left: 30%;
-    margin-right: 10%;
-    font-size: 18px;
-    color: $white;
-
-    @include breakpoint($sm-down) { 
-      width: 100%;
-      margin: 0;
-    }
-  }
 
   .meet {
     @extend %pill;
@@ -141,30 +115,138 @@
     font-size: 14px;
     margin: 24px auto;
   }
+  
+  .pre_target {
+    h1 {
+      @include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
+      font-family: $header;
+      font-size: 62px;
+      color: $white;
+      margin: 0;
+      opacity: .8;
+      text-transform: uppercase;
+      margin-top: -.1em;
+      font-weight: $book;
+      line-height: .9em;
 
-  h1 {
-    @include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
-    font-family: $header;
-    font-size: 62px;
-    color: $white;
-    margin: 0;
-    opacity: .8;
-    text-transform: uppercase;
-    margin-top: -.1em;
-    font-weight: $book;
-    line-height: .9em;
+      @include breakpoint($sm-only) { 
+        font-size: 40px;
+      }
 
-    @include breakpoint($sm-only) { 
-      font-size: 40px;
+      @include breakpoint($xs) { 
+        font-size: 32px;
+      }
     }
 
-    @include breakpoint($xs) { 
-      font-size: 32px;
+    img {
+      width: 20%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+
+      @include breakpoint($sm-down) { 
+        display: none;
+      }
+    }
+
+    .col_2 {
+      //@include test;
+      width: 60%;
+      margin-left: 30%;
+      margin-right: 10%;
+      font-size: 18px;
+      color: $white;
+
+      @include breakpoint($sm-down) { 
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+  } // Pre Target
+}
+
+.team_target {
+  //@include transition (all .2s ease-in-out);
+  display: none;
+  overflow: hidden;
+}
+
+.staff_single {
+  //@include test;
+  margin: 0 auto;
+  max-width: 800px;
+  
+  padding: 12px;
+  border: 1px solid $black;
+  background-color: rgba($black, .7);
+
+  &:not(:first-of-type) {
+    margin-top: 48px;
+  }
+
+  .col_1 {
+    //@include test;
+    width: 30%;
+    display: inline-block;
+  }
+  
+  .col_2 {
+    //@include test;
+    width: 60%;
+    vertical-align: top;
+    margin-right: 0;
+    margin-left: 24px;
+    display: inline-block;
+    color: $white;
+
+    @include breakpoint($md-down) { 
+      margin-left: 12px;
     }
   }
 
-}
+  h1 {
+    font-family: $header;
+    font-size: 34px;
+    color: $white;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: $book;
+    padding-top: 6px;
+    
+    @include breakpoint($sm-down) { 
+      font-size: 24px;
+    }
+  }
 
+  h2 {
+    font-family: $header;
+    font-size: 18px;
+    color: $white;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: $book;
+    padding-top: 6px;
+    
+    @include breakpoint($sm-down) { 
+      font-size: 14px;
+    }
+  }
+
+  img {
+    display: block;
+    margin-bottom: 12px;
+    border: 1px solid $dark-blue;
+  }
+
+
+  svg {
+    @include size(24px);
+    margin-right: 18px;
+  }
+
+}
 
 
 

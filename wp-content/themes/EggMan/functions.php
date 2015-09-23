@@ -101,6 +101,8 @@ add_theme_support( 'post-thumbnails' );
 require_once ( '_inc/cpt_items.php' );
 require_once ( '_inc/cpt_testimonial.php' );
 require_once ( '_inc/cpt_press.php' );
+require_once ( '_inc/cpt_staff.php' );
+
 
 /* ---------------------------------
 	Theme Options
@@ -124,8 +126,9 @@ function eggman_metaboxes($meta_boxes){
 	
 	$items_metaboxes = items_metaboxes();
 	$press_metaboxes = press_metaboxes();
+  $staff_metaboxes = staff_metaboxes();
 
-	$meta_boxes = array_merge( $items_metaboxes, $press_metaboxes);
+	$meta_boxes = array_merge( $items_metaboxes, $press_metaboxes, $staff_metaboxes);
 	return $meta_boxes;	
 }
 

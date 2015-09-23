@@ -33,12 +33,17 @@
 
 <section class="team">
   <div class="wrapper">
-    <img src="<?php bloginfo('stylesheet_directory'); ?>/img/raster/compressed/chef.png">
-      <div class="col_2">
-        <h1>Tom is The EggMan</h1>
-        <p>Bacon ipsum dolor amet jerky pork belly pancetta shoulder. Flank short loin short ribs jowl turducken brisket meatball alcatra doner tenderloin pig t-bone ball tip. Meatloaf andouille sausage pork chop fatback. </p>
-        <a href="" class="meet">Meet The EggSquad</a>
-      </div>
+    <div class="team_target"></div>
+
+    <div class="pre_target">
+      <img src="<?php bloginfo('stylesheet_directory'); ?>/img/raster/compressed/chef.png">
+        <div class="col_2">
+          <h1>Tom is The EggMan</h1>
+          <p>Bacon ipsum dolor amet jerky pork belly pancetta shoulder. Flank short loin short ribs jowl turducken brisket meatball alcatra doner tenderloin pig t-bone ball tip. Meatloaf andouille sausage pork chop fatback. </p>
+          <a href="" class="meet">Meet The EggSquad</a>
+        </div>
+    </div>
+    
   </div>
 </section>
 

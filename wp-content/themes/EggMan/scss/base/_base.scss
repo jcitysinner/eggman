@@ -88,6 +88,7 @@ a {
       @include size(18px);
       @include transform-origin(center center);
       @include animation(loadingSpin 700ms ease-in-out 50);
+      fill: currentColor;
     }
   } // Loading
 }

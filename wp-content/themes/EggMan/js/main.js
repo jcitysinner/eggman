@@ -8,7 +8,7 @@ $(document).ready(function() {
 //
   $('.press .lmore').click(function() {
     var currentWidth = $(this).outerWidth();
-    console.log(currentWidth);
+    //console.log(currentWidth);
     $(this).css("width",currentWidth + "px");
     $(this).text('Loading\u2026').append( '<div class="loading"><svg><use xlink:href="#egg-cross"></use></svg></div>' );
 
@@ -44,7 +44,7 @@ $('.type-items').click(function() {
     
     $.post(ajaxurl, data, function(response){
       $container.html(response);
-      console.log(response);
+      //console.log(response);
       $container.slideDown().addClass('open');
       $('.item .loading').fadeOut( 'fast', function() {
         $('.item .loading').remove();
@@ -66,7 +66,51 @@ $(".menu_target").on("click", ".close", function() {
 // End Menu Ajax Call
 
 
-  
+//
+// Pulls in menu items via ajax
+// Fucntion located in _inc / items / _menu_functions.php
+//
+
+
+$('.meet').click(function() {
+  var $container = $(".team_target");
+  var data = {
+    action: 'staff_archive', // Call function
+  };
+
+ var currentWidth = $(this).outerWidth();
+  console.log(currentWidth);
+  $(this).css("width",currentWidth + "px");
+  $(this).text('Loading\u2026').append( '<div class="loading"><svg><use xlink:href="#egg-cross"></use></svg></div>' );
+
+ var currentHeight = $('.team').outerHeight();
+ $('.team').css("min-height",currentHeight + "px");
+    
+    $.post(ajaxurl, data, function(response){
+
+      $('.pre_target').fadeOut( "slow", function() {
+
+        $(".pre_target").remove();
+        $container.html(response);
+        $container.slideDown();
+
+      }); 
+      
+      //console.log(response);
+    });
+
+  return false;
+});
+
+$(".menu_target").on("click", ".close", function() {
+  $('.item.active').removeClass('active');
+  $(".menu_target").slideToggle().removeClass('open');
+});
+
+// End Menu Ajax Call
+
+
+
   // $.ajax({
     
   //   url: "http://data.streetfoodapp.com/1.1/vendors/egg-man",
