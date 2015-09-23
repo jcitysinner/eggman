@@ -33,6 +33,7 @@
     height: 400px;
     background-position: center center;
     background-size: cover;
+    border-bottom: 1px solid $light-blue;
 
     @include breakpoint($sm-down) { 
       height: 0;
@@ -185,7 +186,11 @@
       float: none;
       margin-bottom: 48px;
     }
-
+    
+    img {
+      display: block;
+      margin: 0 auto;
+    }
 
 
   } // col 2
