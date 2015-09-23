@@ -63,3 +63,20 @@
   }
 
 }
+
+
+
+@include keyframes(loadingSpin) {
+  0% {
+    @include transform(scale(.8) rotate(0deg));
+  }
+
+  50% {
+    @include transform(scale(1) rotate(180deg));
+  }
+
+  100% {
+    @include transform(scale(.8) rotate(360deg));
+  }
+
+}

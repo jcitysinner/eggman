@@ -37,12 +37,14 @@
 
   .item {
     //@include test;
+    @include transition (all .2s ease-in-out);
     width: 100px;
     display: inline-block;
     text-align: center;
     vertical-align: top;
     margin: 0 6px;
     cursor: pointer;
+    position: relative;
     
 
     @include breakpoint($md-up) {
@@ -66,6 +68,10 @@
         margin-right: 36px;
       }
     }
+  
+    &.active {
+      @include transform(scale(1.1));
+    }
 
 
     h2 {
@@ -80,6 +86,30 @@
         font-size: 14px;
       }
     }
+
+    .loading {
+      //@include test;
+      @include position(absolute, 0 0);
+      background: rgba($white, .8);
+
+      svg {
+        //@include test;
+        @include size(30px);
+        @include transform-origin(center center);
+        //@include alignment(absolute, vertical);
+        @include animation(loadingSpin 700ms $ease-out-quint 50);
+        fill: $light-blue;
+        top: 45px;
+        position: relative;
+
+
+        @include breakpoint($sm-down) {
+          top: 30px;
+        }
+
+      }
+
+    } // Loading
 
   } //Item
 
@@ -114,5 +144,15 @@
   }
 
 } // menuarrow
+
+
+.menu_target { 
+  border-top: 1px solid $light-blue;  
+  border-bottom: 1px solid $light-blue;
+}
+
+
+
+
 
 

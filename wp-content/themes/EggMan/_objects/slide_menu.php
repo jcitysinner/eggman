@@ -25,28 +25,8 @@
         $image_id = get_post_thumbnail_id($post->ID);
         $url = wp_get_attachment_image_src($image_id,'post_card_large', true)[0];
     ?>
-      <div <?php post_class('item'); ?>  id="post-<?php the_ID(); ?>">
+      <div <?php post_class('item'); ?>  id="post-<?php the_ID(); ?>" data-postid="<?php the_ID(); ?>">
         <div class="img-wrap"><img src="<?php echo $url ?>"></div>
-        <h2><?php the_title(); ?></h2>
-      </div>
-
-      <div <?php post_class('item'); ?>  id="post-<?php the_ID(); ?>">
-        <div class='img-wrap'><img src="<?php echo $url ?>"></div>
-        <h2><?php the_title(); ?></h2>
-      </div>
-
-      <div <?php post_class('item'); ?>  id="post-<?php the_ID(); ?>">
-        <div class='img-wrap'><img src="<?php echo $url ?>"></div>
-        <h2><?php the_title(); ?></h2>
-      </div>
-
-      <div <?php post_class('item'); ?>  id="post-<?php the_ID(); ?>">
-        <div class='img-wrap'><img src="<?php echo $url ?>"></div>
-        <h2><?php the_title(); ?></h2>
-      </div>
-
-      <div <?php post_class('item'); ?>  id="post-<?php the_ID(); ?>">
-        <div class='img-wrap'><img src="<?php echo $url ?>"></div>
         <h2><?php the_title(); ?></h2>
       </div>
 
@@ -64,3 +44,5 @@
 </div>
 
 </section>
+
+<div class="menu_target" style="display:none;"></div>
