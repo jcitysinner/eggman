@@ -172,6 +172,7 @@ $(".menu_target").on("click", ".close", function() {
 
           currentClose = data.open[i].end;
           currentOpen = data.open[i].start;
+          info = data.open[i].display;
           soon = true;
 
         }
@@ -228,6 +229,8 @@ $(".menu_target").on("click", ".close", function() {
         console.log(currentOpen);
         var date = new Date(currentOpen*1000);
         var hours = date.getHours();
+        var closeDate = new Date(currentClose*1000);
+        var closeHours = date.getHours();
 
         if (hours > 12) {
 
@@ -243,7 +246,21 @@ $(".menu_target").on("click", ".close", function() {
 
         }
 
-        $('#status-copy').html('<span>Currently Closed</span>We will be open again at ' + hours + '!');
+        if (closeHours > 12) {
+
+          closeHours = closeHours - 12 + 'PM';
+
+        } else if (closeHours === 0) {
+
+          closeHours = '12AM';
+
+        } else {
+
+          closeHours = closeHours + 'AM';
+
+        }
+
+        $('#status-copy').html('<span>Will be open at ' + hours + ' until ' + closeHours + '</span>' + info);
         $('.status').removeClass('closed');
         $('.status').addClass('soon');
 
