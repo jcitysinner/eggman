@@ -76,6 +76,15 @@
 
     } //twitter
 
+    &.placeholder {
+
+      height: 0;
+      line-height: 0;
+      font-size: 0;
+      border: 0;
+
+    }
+
   } //social-post
 
 } //social

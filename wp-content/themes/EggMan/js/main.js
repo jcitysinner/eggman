@@ -313,6 +313,27 @@ $(".menu_target").on("click", ".close", function() {
   });
 
 
+  $.ajax({
+      dataType: "jsonp",
+      url: themeurl + "/_objects/jsonp-wrapper-insta.php",
+      success: function(data) {
+          console.log(data);
+          console.log(data.data.length);
+
+          for (var i = 0; i < data.data.length; i++) {
+
+            console.log('NEW TEST');
+            $('.social .wrapper').first().prepend('<div class="social-post instagram"><img src="' + data.data[i].images.standard_resolution.url + '"></div>');
+
+          }
+          
+      },
+      error: function(error) {
+          console.log(error);
+      }
+  });
+
+
 
 
 

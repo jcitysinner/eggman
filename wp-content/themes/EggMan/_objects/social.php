@@ -10,7 +10,7 @@ $hashtag =  cmb2_get_option('eggman_options', 'hashtag');
 <section class='social'>
   <div class='wrapper'>
 
-      <div class='social-post instagram'>
+<!--       <div class='social-post instagram'>
         <img class='' src="http://placehold.it/300x300">
       </div>
 
@@ -33,11 +33,14 @@ $hashtag =  cmb2_get_option('eggman_options', 'hashtag');
 
       <div class='social-post instagram'>
         <img class='' src="http://placehold.it/300x300">
-      </div>
+      </div> -->
 
 
 
-
+      <div class='social-post placeholder'></div>
+      <div class='social-post placeholder'></div>
+      <div class='social-post placeholder'></div>
+      <div class='social-post placeholder'></div>
   </div>
 
   <div class="share">
