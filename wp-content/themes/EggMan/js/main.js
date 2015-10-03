@@ -1,14 +1,114 @@
 $(document).ready(function() {
-  
-  var menuWidth = 0;
 
-  $('.menu .item').each(function() {
 
-    menuWidth = menuWidth + $(this).outerWidth(true);
+
+//
+// Pulls in press articles via ajax
+// Fucntion located in ???
+//
+  $('.press .lmore').click(function() {
+    var currentWidth = $(this).outerWidth();
+    //console.log(currentWidth);
+    $(this).css("width",currentWidth + "px");
+    $(this).text('Loading\u2026').append( '<div class="loading"><svg><use xlink:href="#egg-cross"></use></svg></div>' );
+
+    $("<div>").load("media-posts", function() {
+      var mdata = $(this).html();
+      $('.press ul .last').fadeOut( "slow", function() {
+        $(".press ul").append(mdata);
+      }); 
+    });
 
   });
 
-  //$('.menu').width(menuWidth);
+
+
+//
+// Pulls in menu items via ajax
+// Fucntion located in _inc / items / _menu_functions.php
+//
+
+
+$('.type-items').click(function() {
+  var postid = $(this).attr('data-postid');
+  var $container = $(".menu_target");
+  var data = {
+    action: 'menu_item', // Call function
+    post_id: postid // Pass post id data
+  };
+ 
+  if (!$(this).hasClass('active')) {
+    $('.item.active').removeClass('active');
+    $(this).toggleClass('active');
+    $(this).append( '<div class="loading"><svg><use xlink:href="#egg-cross"></use></svg></div>' );
+    
+    $.post(ajaxurl, data, function(response){
+      $container.html(response);
+      //console.log(response);
+      $container.slideDown().addClass('open');
+      $('.item .loading').fadeOut( 'fast', function() {
+        $('.item .loading').remove();
+      });
+    });
+
+  } else {
+    $container.slideUp().removeClass('open');
+    $(this).toggleClass('active');
+  }
+  return false;
+});
+
+$(".menu_target").on("click", ".close", function() {
+  $('.item.active').removeClass('active');
+  $(".menu_target").slideToggle().removeClass('open');
+});
+
+// End Menu Ajax Call
+
+
+//
+// Pulls in menu items via ajax
+// Fucntion located in _inc / items / _menu_functions.php
+//
+
+
+$('.meet').click(function() {
+  var $container = $(".team_target");
+  var data = {
+    action: 'staff_archive', // Call function
+  };
+
+ var currentWidth = $(this).outerWidth();
+  console.log(currentWidth);
+  $(this).css("width",currentWidth + "px");
+  $(this).text('Loading\u2026').append( '<div class="loading"><svg><use xlink:href="#egg-cross"></use></svg></div>' );
+
+ var currentHeight = $('.team').outerHeight();
+ $('.team').css("min-height",currentHeight + "px");
+    
+    $.post(ajaxurl, data, function(response){
+
+      $('.pre_target').fadeOut( "slow", function() {
+
+        $(".pre_target").remove();
+        $container.html(response);
+        $container.slideDown();
+
+      }); 
+      
+      //console.log(response);
+    });
+
+  return false;
+});
+
+$(".menu_target").on("click", ".close", function() {
+  $('.item.active').removeClass('active');
+  $(".menu_target").slideToggle().removeClass('open');
+});
+
+// End Menu Ajax Call
+
 
 
   // $.ajax({
@@ -55,7 +155,7 @@ $(document).ready(function() {
       var soon = false;
       var currentTime = Date.now() / 1000;
       var info;
-      var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      var months = ['Jan','Feb','March','April','May','June','July','Aug','Sept','Oct','Nov','Dec'];
 
       console.log(currentTime);
       console.log(data.open[0].start);
@@ -196,19 +296,8 @@ $(document).ready(function() {
   });
 
 
-  $('.press .lmore').click(function() {
-
-    console.log('test');
 
 
-    $("<div>").load("media-posts", function() {
-          $('.press ul .last').hide();
-          $(".press ul").append($(this).html());
-    });
-
-    //$('.press ul').load('media-posts');
-
-  });
 
 
   $("#contact-open-trigger").click(function(e) {

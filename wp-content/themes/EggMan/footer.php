@@ -10,14 +10,14 @@
 		</div>
 	
 		<div class="meta">
-			<p>Lorum Ipsum Uh huh. So that’s an average day for you then? No doubt You chop your balls off and die? Hell yeah</p>
+		<?php $hashtag =  cmb2_get_option('eggman_options', 'footer'); echo '<p>'. $hashtag .'</p>'; ?>
 		</div>
 
 		<div class="line">
 			<svg><use xlink:href="#bacon-cross"></use></svg>
 		</div>
 
-		<small>© 2015 All rights reserved. Thomas Januszewski </small>
+		<small>&copy; <?php echo date("Y"); ?> All rights reserved. Thomas Januszewski </small>
 
 	</div>
 </footer>

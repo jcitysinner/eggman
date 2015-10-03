@@ -26,9 +26,9 @@ function eggman_scripts() {
     }
     wp_enqueue_script('main');
 
-    // if ( current_user_can( 'manage_options' ) ) {
-    //   wp_enqueue_script('livereload');
-    // }
+    if ( current_user_can( 'manage_options' ) ) {
+      wp_enqueue_script('livereload');
+    }
 
     wp_deregister_script('jquery');
     wp_register_script('newjquery', "//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js", false, null, true);
@@ -101,6 +101,8 @@ add_theme_support( 'post-thumbnails' );
 require_once ( '_inc/cpt_items.php' );
 require_once ( '_inc/cpt_testimonial.php' );
 require_once ( '_inc/cpt_press.php' );
+require_once ( '_inc/cpt_staff.php' );
+
 
 /* ---------------------------------
 	Theme Options
@@ -124,8 +126,9 @@ function eggman_metaboxes($meta_boxes){
 	
 	$items_metaboxes = items_metaboxes();
 	$press_metaboxes = press_metaboxes();
+  $staff_metaboxes = staff_metaboxes();
 
-	$meta_boxes = array_merge( $items_metaboxes, $press_metaboxes);
+	$meta_boxes = array_merge( $items_metaboxes, $press_metaboxes, $staff_metaboxes);
 	return $meta_boxes;	
 }
 
@@ -258,6 +261,22 @@ function is_edit_page($new_edit = null){
 }
 
 
+add_action('admin_bar_menu', 'remove_wp_logo', 999);
+
+function remove_wp_logo( $wp_admin_bar ) {
+$wp_admin_bar->remove_node('wp-logo');
+}
+
+
+
+
+
+function get_the_content_with_formatting ($more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
+  $content = get_the_content($more_link_text, $stripteaser, $more_file);
+  $content = apply_filters('the_content', $content);
+  $content = str_replace(']]>', ']]&gt;', $content);
+  return $content;
+}
 
 
 ?>

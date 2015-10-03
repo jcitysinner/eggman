@@ -32,8 +32,76 @@ function items_metaboxes()
           'id'   => $prefix.'show',
           'type' => 'checkbox',
           'default' => cmb2_set_checkbox_default_for_new_post( true )
+        ),
+
+        array(
+          'name'    => 'Calories',
+          'desc'    => '',
+          'id'      => $prefix.'cal',
+          'type'    => 'text' 
+        ),
+
+
+        array(
+          'name'    => 'Carbs (G)',
+          'desc'    => '',
+          'id'      => $prefix.'carb',
+          'type'    => 'text' 
+        ),
+
+        array(
+          'name'    => 'Total Fat (G)',
+          'desc'    => '',
+          'id'      => $prefix.'fat',
+          'type'    => 'text' 
+        ),
+
+        array(
+          'name'    => 'Sodium (MG)',
+          'desc'    => '',
+          'id'      => $prefix.'sodium',
+          'type'    => 'text' 
+        ),
+
+
+        array(
+          'name'    => 'Based on',
+          'desc'    => '',
+          'id'      => $prefix.'base',
+          'type'    => 'text' 
+        ),        
+
+        array(
+          'name'    => 'SubTitle',
+          'desc'    => '',
+          'id'      => $prefix.'sub',
+          'type'    => 'text' 
+        ),    
+
+        array(
+          'name'    => 'Price Regular',
+          'desc'    => '',
+          'id'      => $prefix.'price_reg',
+          'type'    => 'text_money' 
+        ),   
+
+        array(
+          'name'    => 'Price Large',
+          'desc'    => '',
+          'id'      => $prefix.'price_lrg',
+          'type'    => 'text_money' 
+        ),   
+
+        array(
+          'name'    => 'Money Shot',
+          'desc'    => 'Upload an image or enter an URL.',
+          'id'      => $prefix.'money',
+          'type'    => 'file',
+          // Optionally hide the text input for the url:
+          'options' => array(
+              'url' => false,
+          ),  
         )
-        
     )
 );
 return $meta_boxes;
