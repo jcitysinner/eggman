@@ -1,7 +1,7 @@
 <?php
 
 header("Content-Type:text/javascript"); // avoid browser warnings
-$url = 'http://data.streetfoodapp.com/1.1/vendors/funnel-cake-express';
+$url = 'http://data.streetfoodapp.com/1.1/vendors/egg-man';
 $json_data = file_get_contents($url);
 //$request = new HttpRequest("http://data.streetfoodapp.com/1.1/vendors/egg-man", HttpRequest::METH_GET);
 // $request->send();

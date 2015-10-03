@@ -82,6 +82,8 @@ $(document).ready(function() {
         var thisDateDate = thisDateOpen.getDate();
         var thisDateOpenHour = thisDateOpen.getHours();
         var thisDateCloseHour = thisDateClose.getHours();
+        var thisLat = data.open[i].latitude;
+        var thisLong = data.open[i].longitude;
 
         if (thisDateOpenHour > 12) {
 
@@ -111,7 +113,7 @@ $(document).ready(function() {
 
         }
 
-        var html = $('.schedule dl').html() + '<dt>'+ thisDateMonth +' '+ thisDateDate +'</dt><dd><div><strong>'+thisDateOpenHour+' - '+thisDateCloseHour+'</strong>'+data.open[i].display+'<a href="#"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a></div></dd>';
+        var html = $('.schedule dl').html() + '<dt>'+ thisDateMonth +' '+ thisDateDate +'</dt><dd><div><strong>'+thisDateOpenHour+' - '+thisDateCloseHour+'</strong>'+data.open[i].display+'<a href="http://maps.google.com/maps?z=18&q='+ thisLat +',' + thisLong +'""><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a></div></dd>';
 
         $('.schedule dl').html(html);
 
@@ -226,6 +228,16 @@ $(document).ready(function() {
     $('body').css('overflow-y', 'auto');
 
     $('.contact-form-wrap').fadeOut();
+
+  });
+
+  $('#schedule-trigger').click(function(e) {
+
+    e.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $(".schedule").offset().top
+    }, 700);
 
   });
   

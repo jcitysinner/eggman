@@ -26,7 +26,7 @@ $status = closed; // Soon or Closed
       }
     ?>
    
-    <a href="#">
+    <a href="#" id='schedule-trigger' class='schedule-trigger'>
       <svg class="calendar-icon"><use xlink:href="#calendar-icon"></use></svg>
       <span>See Future Schedule</span>
     </a>
