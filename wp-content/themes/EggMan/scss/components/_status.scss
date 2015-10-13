@@ -19,7 +19,18 @@
     @include linkcolor($light-blue, darken); 
   }
 
+  .loading {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 12px;
 
+    svg {
+      @include size(18px);
+      @include transform-origin(center center);
+      @include animation(loadingSpin 700ms ease-in-out 50);
+      fill: currentColor;
+    }
+  } // Loading
 
 
 
@@ -105,6 +116,10 @@
 
     @include breakpoint($md-up) { 
       padding: 0 24px;
+    }
+
+    .status-icon {
+      display: none;
     }
 
     a {
