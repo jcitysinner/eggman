@@ -60,15 +60,15 @@ $('.type-items').click(function() {
 
 $(".menu_target").on("click", ".close", function() {
   $('.item.active').removeClass('active');
-  $(".menu_target").slideToggle().removeClass('open');
+  $(".menu_target").slideUp().removeClass('open');
 });
 
 // End Menu Ajax Call
 
 
 //
-// Pulls in menu items via ajax
-// Fucntion located in _inc / items / _menu_functions.php
+// Pulls in Staff items via ajax
+// Fucntion located in 
 //
 
 
@@ -87,25 +87,16 @@ $('.meet').click(function() {
  $('.team').css("min-height",currentHeight + "px");
     
     $.post(ajaxurl, data, function(response){
-
       $('.pre_target').fadeOut( "slow", function() {
-
         $(".pre_target").remove();
         $container.html(response);
         $container.slideDown();
-
       }); 
-      
       //console.log(response);
     });
-
   return false;
 });
 
-$(".menu_target").on("click", ".close", function() {
-  $('.item.active').removeClass('active');
-  $(".menu_target").slideToggle().removeClass('open');
-});
 
 // End Menu Ajax Call
 
@@ -151,8 +142,8 @@ $(".menu_target").on("click", ".close", function() {
       var info;
       var months = ['Jan','Feb','March','April','May','June','July','Aug','Sept','Oct','Nov','Dec'];
 
-      console.log(currentTime + ' currenttime');
-      console.log(data.open[0].start + ' Open Time');
+      //console.log(currentTime + ' currenttime');
+      //console.log(data.open[0].start + ' Open Time');
 
       for (i = 0; i < data.open.length; i++) {
         if (data.open[i].start < currentTime && data.open[i].end > currentTime) {
@@ -205,8 +196,8 @@ $(".menu_target").on("click", ".close", function() {
 
       }
 
-        console.log(currentOpen);
-        console.log(currentClose);
+        //console.log(currentOpen);
+        //console.log(currentClose);
 
       if (currentClose === 0) {
 
@@ -298,12 +289,12 @@ $(".menu_target").on("click", ".close", function() {
       dataType: "jsonp",
       url: themeurl + "/_objects/jsonp-wrapper-insta.php",
       success: function(data) {
-          console.log(data);
-          console.log(data.data.length);
+          //console.log(data);
+          //console.log(data.data.length);
 
           for (var i = 0; i < data.data.length; i++) {
 
-            console.log('NEW TEST');
+            //console.log('NEW TEST');
             $('.social .wrapper').first().prepend('<div class="social-post instagram"><img src="' + data.data[i].images.standard_resolution.url + '"></div>');
 
           }
