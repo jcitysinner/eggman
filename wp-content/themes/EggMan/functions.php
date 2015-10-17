@@ -102,6 +102,7 @@ require_once ( '_inc/cpt_items.php' );
 require_once ( '_inc/cpt_testimonial.php' );
 require_once ( '_inc/cpt_press.php' );
 require_once ( '_inc/cpt_staff.php' );
+require_once('_inc/twitteroauth/twitteroauth/twitteroauth.php'); 
 
 
 /* ---------------------------------
