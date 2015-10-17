@@ -21,3 +21,5 @@ node_modules/
 *.zip
 
 *.cache
+
+cache_file_tweet
