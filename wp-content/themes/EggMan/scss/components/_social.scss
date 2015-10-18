@@ -3,36 +3,49 @@
 .social {
   background-image: url('img/raster/compressed/social-bg.jpg');
   padding: 18px 0 0;
-  text-align: center;
+
 
   >.wrapper {
-    @include test;
-    //@include justifyed;
+    //@include test;
+    @include justifyed;
+  }
+
+
+  .instagram-wrapper {
+    @include justifyed;
+  }
+
+  .twitter-wrapper {
     @include align-items(stretch);
     @include display(flex);
     @include flex-direction(row);
-    @include justify-content(flex-start);
-    @include flex-wrap(nowrap);
+    @include justify-content(space-between);
+    @include flex-flow(wrap);
+    //@include test;
+    font-size: 18px;
+    
+    &.post {
 
-    margin-bottom: 18px;
-
-    @include break($max: 1200px) {
-      @include flex-wrap(wrap);
+      @include break($max: 400px) {
+        display: none;
+      }
     }
   }
 
   .social-post {
-    @include flex(1);
+    //@include flex(1);
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    text-align: left;
     width: 15%;
-    border: solid 2px $white;
+    border: solid 3px $white;
     color: $white;
     background-color: rgba(shade($red, 50%), .5);
-    margin: 0 9px;
+    margin-bottom: 2%;
 
+    @include breakpoint($xs) { 
+      width: 31.9%;
+    }
     
     &:first-child {
       margin-left: 0;
@@ -46,44 +59,78 @@
       vertical-align: middle;
     }
 
+    svg {
+      @include size(14px);
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    
+    &.instagram {
+      svg {
+        @include position(absolute, null 12px 12px null);
+      }
+    }
 
     &.twitter {
-      @include flex(2.25);
-      padding: 8px;
-      width: 35%;
+      width: 100%;
+      padding: 18px;
+      overflow: hidden;
 
-      img {
-        width: 41%;
+      @include breakpoint($md-up) { 
+        width: 49%;
       }
 
-      svg {
-        @include size(14px);
-        @include position(absolute, null 12px 12px null);
+
+      .media {
+        @include size(100px);
+        margin-right: 12px;
+      }
+
+      .twitter-avatar {
+        @include size(24px);
+        margin-right: 6px;
+      }
+      
+      .twitter-user {
+        display: block;
+        margin-top: 18px;
+        font-size: 14px;
+      }
+
+      .twitter-link {
+        @include position(absolute, null 12px 19px null);
+        display: block;
+        font-size: 12px;
+      }
+
+      a {
+        @include linkcolor($white);
+      }
+
+      .twitter-content {
+        //@include test;
+        vertical-align: middle;
+        display: inline-block;
+        text-align: left;
+        margin: 0;
+        width: 100%;
       }
 
       p {
-        @include calc(max-width, '100% - 50%');
-        vertical-align: middle;
-        font-size: 15px;
+        font-size: 18px;
         letter-spacing: .87px;
         color: $white;
         font-weight: $medium;
         line-height: 20px;
-        display: inline-block;
-        margin: 0 0 0 15px;
-        text-align: left;
+        display: block;
+        margin: 0;
+      }
+
+      &.hasmedia .twitter-content {
+        @include calc(width, '100% - 124px');
       }
 
     } //twitter
-
-    &.placeholder {
-
-      height: 0;
-      line-height: 0;
-      font-size: 0;
-      border: 0;
-
-    }
 
   } //social-post
 

@@ -2,6 +2,14 @@ $(document).ready(function() {
 
 
 
+
+
+
+$('.twitter-wrapper .twitter:last-child').prev('div').andSelf().appendTo(".twitter-wrapper.post");;
+
+
+
+
 //
 // Pulls in press articles via ajax
 // Fucntion located in ???
@@ -284,26 +292,6 @@ $('.meet').click(function() {
       }
   });
 
-
-  $.ajax({
-      dataType: "jsonp",
-      url: themeurl + "/_objects/jsonp-wrapper-insta.php",
-      success: function(data) {
-          //console.log(data);
-          //console.log(data.data.length);
-
-          for (var i = 0; i < data.data.length; i++) {
-
-            //console.log('NEW TEST');
-            $('.social .wrapper').first().prepend('<div class="social-post instagram"><img src="' + data.data[i].images.standard_resolution.url + '"></div>');
-
-          }
-          
-      },
-      error: function(error) {
-          console.log(error);
-      }
-  });
 
 
 

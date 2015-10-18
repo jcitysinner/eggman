@@ -10,37 +10,17 @@ $hashtag =  cmb2_get_option('eggman_options', 'hashtag');
 <section class='social'>
   <div class='wrapper'>
 
-<!--       <div class='social-post instagram'>
-        <img class='' src="http://placehold.it/300x300">
-      </div>
+<div class="twitter-wrapper">
+<?php include( "social_twitter.php"); ?>
+</div>
 
-      <div class='social-post instagram'>
-        <img class='' src="http://placehold.it/300x300">
-      </div>
+<div class="instagram-wrapper">
+  <?php include( "social_insta.php"); ?>
+</div>
 
+<div class="twitter-wrapper post">
+</div>
 
-
-      <div class='social-post twitter'>
-        <img src="http://placehold.it/300x300">
-        <p>Not joking when I say @TheEggmanCanada was the BEST meal we had while visiting Toronto.</p>
-        <svg><use xlink:href="#twitter-icon"></use></svg>
-      </div>
-      
-            <div class='social-post instagram'>
-        <img class='' src="http://placehold.it/300x300">
-      </div>
-
-
-      <div class='social-post instagram'>
-        <img class='' src="http://placehold.it/300x300">
-      </div> -->
-
-
-
-      <div class='social-post placeholder'></div>
-      <div class='social-post placeholder'></div>
-      <div class='social-post placeholder'></div>
-      <div class='social-post placeholder'></div>
   </div>
 
   <div class="share">
