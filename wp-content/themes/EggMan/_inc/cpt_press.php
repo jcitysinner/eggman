@@ -6,7 +6,7 @@ $pluralname = 'Press';
 $slug = 'press';
 
    $labels = array(
-        'name' => _($pluralname),
+        'name' => __($pluralname),
         'singular_name' => __($singularname),
         'add_new' => __('Add New Article'),
         'add_new_item' => __('Add New Article'),

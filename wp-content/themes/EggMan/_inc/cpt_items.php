@@ -5,16 +5,16 @@ $singularname = 'Item';
 $pluralname = 'Items';
 $slug = 'items';
 
-   $labels = array(
-        'name' => _($pluralname),
-        'singular_name' => __($singularname),
-        'add_new' => __('Add New '.$singularname),
-        'add_new_item' => __('Add New '. $singularname),
-        'edit_item' => __('Edit '. $singularname),
-        'new_item' => __('New '.$singularname),
-        'view_item' => __('View '.$singularname),
-        'search_items' => __('Search '.$pluralname),
-    );
+  $labels = array(
+    'name'          => __($pluralname),
+    'singular_name' => __($singularname),
+    'add_new'       => __('Add New '.$singularname),
+    'add_new_item'  => __('Add New '. $singularname),
+    'edit_item'     => __('Edit '. $singularname),
+    'new_item'      => __('New '.$singularname),
+    'view_item'     => __('View '.$singularname),
+    'search_items'  => __('Search '.$pluralname)
+  );
     
   $args = array(
     'labels'        => $labels,
