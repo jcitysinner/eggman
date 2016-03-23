@@ -7,8 +7,8 @@ $slug = 'press';
 
    $labels = array(
         'name' => _($pluralname),
-        'singular_name' => _($singularname),
-        'add_new' => _('Add New Article'),
+        'singular_name' => __($singularname),
+        'add_new' => __('Add New Article'),
         'add_new_item' => __('Add New Article'),
         'edit_item' => __('Edit Article'),
         'new_item' => __('New Article'),

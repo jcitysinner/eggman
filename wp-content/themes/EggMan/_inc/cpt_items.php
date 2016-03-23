@@ -7,14 +7,13 @@ $slug = 'items';
 
    $labels = array(
         'name' => _($pluralname),
-        'singular_name' => _($singularname),
-        'add_new' => _('Add New '.$singularname),
+        'singular_name' => __($singularname),
+        'add_new' => __('Add New '.$singularname),
         'add_new_item' => __('Add New '. $singularname),
         'edit_item' => __('Edit '. $singularname),
         'new_item' => __('New '.$singularname),
         'view_item' => __('View '.$singularname),
         'search_items' => __('Search '.$pluralname),
-        'parent_item_colon' => ''
     );
     
   $args = array(
