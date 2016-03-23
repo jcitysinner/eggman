@@ -27,13 +27,13 @@ $catering =  cmb2_get_option('eggman_options', 'catering');
 			<h2>Social</h2>
 			  <?php
           if (!empty($twitter)) {
-            echo '<a href="'.$twitter.'"><svg><use xlink:href="#twitter-icon"></use></svg> Twitter</a>';
+            echo '<a href="https://twitter.com/'.$twitter.'"><svg><use xlink:href="#twitter-icon"></use></svg> Twitter</a>';
           }
           if (!empty($facebook)) {
-            echo '<a href="'.$facebook.'"><svg><use xlink:href="#facebook-icon"></use></svg> Facebook</a>';
+            echo '<a href="https://www.facebook.com/'.$facebook.'"><svg><use xlink:href="#facebook-icon"></use></svg> Facebook</a>';
           }
           if (!empty($instagram)) {
-            echo '<a href="'.$instagram.'"><svg><use xlink:href="#instagram-icon"></use></svg> Instagram</a>';
+            echo '<a href="https://www.instagram.com/'.$instagram.'"><svg><use xlink:href="#instagram-icon"></use></svg> Instagram</a>';
           }
         ?>
 		</span>

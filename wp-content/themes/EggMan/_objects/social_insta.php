@@ -1,6 +1,6 @@
 <?php 
 
-  $accessToken = '40110218.9bde9aa.3c270560cd524be4b0cfbcc455edb471';
+  $accessToken = cmb2_get_option('eggman_options', 'instagramaccesstoken');
   $tag = cmb2_get_option('eggman_options', 'hashtag');
   $urlLiked = 'https://api.instagram.com/v1/users/self/media/liked/?access_token='.$accessToken.'&count=12';
   $urlTag = 'https://api.instagram.com/v1/tags/'.$tag.'/media/recent?client_id=bd41ebe7f25e49eab9bf444cc316cd01&count=6';

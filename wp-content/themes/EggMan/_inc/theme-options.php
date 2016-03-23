@@ -139,6 +139,32 @@ class Myprefix_Admin {
     ) );  
 
 
+
+    $cmb->add_field( array(
+        'name' => 'Twitter Consumer Key',
+        'id'   => 'twitterconsumerkey',
+        'type' => 'text',
+    ) );  
+    $cmb->add_field( array(
+        'name' => 'Twitter Consumer Secret',
+        'id'   => 'twitterconsumersecret',
+        'type' => 'text',
+    ) );  
+    $cmb->add_field( array(
+        'name' => 'Twitter Access Token',
+        'id'   => 'twitteraccesstoken',
+        'type' => 'text',
+    ) );  
+    $cmb->add_field( array(
+        'name' => 'Twitter Access Token Secret',
+        'id'   => 'twitteraccesstokensecret',
+        'type' => 'text',
+    ) );  
+    $cmb->add_field( array(
+        'name' => 'Instagram Access Token',
+        'id'   => 'instagramaccesstoken',
+        'type' => 'text',
+    ) );  
   }
 
   /**

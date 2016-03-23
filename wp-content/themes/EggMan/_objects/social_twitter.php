@@ -1,11 +1,11 @@
 <?php
 
-$twitteruser = "picard102";
+$twitteruser = cmb2_get_option('eggman_options', 'twitter');
 $notweets = 4;
-$consumerkey = "GYMt1XNbvyYqGtT66OaY3mAhi";
-$consumersecret = "ljhrnLoaOg5c0BlVVaeDtwA3fdm5doiAQWeeUDHxHFJJJyytVD";
-$accesstoken = "985621-TJkIJZA6vCPvNJ0kN1BCJ9YNQjLd0bbVJmQE3CQc7xk";
-$accesstokensecret = "FRJ9mVfZcryZwXLsFUReb7rS620tFINU9uim8VoEu1GQD";
+$consumerkey = cmb2_get_option('eggman_options', 'twitterconsumerkey');
+$consumersecret = cmb2_get_option('eggman_options', 'twitterconsumersecret');
+$accesstoken = cmb2_get_option('eggman_options', 'twitteraccesstoken');
+$accesstokensecret = cmb2_get_option('eggman_options', 'twitteraccesstokensecret');
  
 function getConnectionWithAccessToken($cons_key, $cons_secret, $oauth_token, $oauth_token_secret) {
   $connection = new TwitterOAuth($cons_key, $cons_secret, $oauth_token, $oauth_token_secret);
@@ -50,17 +50,7 @@ echo '
 </a>
 </div>
  <a class="twitter-link" href="https://twitter.com/'. $value->user->screen_name.'/status/'. $value->id.'">'.date('M jS', strtotime($value->created_at)).'  <svg><use xlink:href="#twitter-icon"></use></svg></a>
- 
-
-          </div> ';
-
-
-
-
-
-
-
-
+ </div> ';
       $i++;
    }
 
