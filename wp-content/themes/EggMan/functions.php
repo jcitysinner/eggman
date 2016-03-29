@@ -72,7 +72,7 @@ add_action( 'admin_enqueue_scripts', 'wpa_scripts' );
 function eggman_styles()
 {	
 	wp_enqueue_style('eggman_reset', get_stylesheet_directory_uri().'/style.css', false, '1.0');	
-  wp_enqueue_style('eggman_reset', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600|Montserrat:400,700|Chau+Philomene+One', false, '1.0');  
+  wp_enqueue_style('eggman_reset_font', 'https://fonts.googleapis.com/css?family=Nunito:300|Chau+Philomene+One', false, '1.0');  
 }
 add_action('wp_enqueue_scripts', 'eggman_styles');
 
