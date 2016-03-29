@@ -10,10 +10,10 @@
   $mathimatical: ($thick * 3) + ($spaceing * 2);
 
   font-size: .1px;
-  cursor: pointer;  
+  cursor: pointer;
   color: $black;
   letter-spacing: 0;
-  font-weight: $book; 
+  font-weight: $book;
   text-transform: uppercase;
   width: $width + px;
   text-align: left;
@@ -33,39 +33,39 @@
   }
 
   &:hover {
-    >span, 
-    >span:before,  
-    >span:after {
+    >span,
+    >span::before,
+    >span::after {
       background: $hover;
     }
   }
 
-  strong { 
-    display: none; 
+  strong {
+    display: none;
   }
-  
+
   >span {
     position: relative;
-    top: .01em;     
+    top: .01em;
     margin-right: 0;
   }
-  
-  span {  
-    margin-right: 15px; 
+
+  span {
+    margin-right: 15px;
     vertical-align: middle;
   }
-    
 
-  
-  >span, 
-  >span:before,  
-  >span:after {
+
+
+  >span,
+  >span::before,
+  >span::after {
     @include transition (
-      background 500ms linear, 
-      transform .3s linear, 
-      top .3s linear .5s, 
+      background 500ms linear,
+      transform .3s linear,
+      top .3s linear .5s,
       bottom .3s linear .5s);
-    
+
     @include transform-style(preserve-3d);
     height: $thick + px;
     width: $width + px;
@@ -77,38 +77,38 @@
     vertical-align: middle;
   }
 
-  >span:before,  
-  >span:after {
+  >span::before,
+  >span::after {
     position: absolute;
     left: 0;
   }
-  
-  >span:before { 
-    top: -$spaceing - $thick + px;  
+
+  >span::before {
+    top: -$spaceing - $thick + px;
   }
 
-  >span:after { 
+  >span::after {
     bottom: -$spaceing - $thick + px;
   }
 
-  &.active >span:before { @include transform(rotate(45deg)); top: 0; background: $color; }
+  &.active >span::before { @include transform(rotate(45deg)); top: 0; background: $color; }
 
-  &.active >span:after { @include transform(rotate(-45deg)); bottom: 0; background: $color; }
+  &.active >span::after { @include transform(rotate(-45deg)); bottom: 0; background: $color; }
 
-  &.active >span { background: transparent;}  
+  &.active >span { background: transparent;}
 
 
-  &.active >span, 
-  &.active >span:before,  
-  &.active >span:after {
+  &.active >span,
+  &.active >span::before,
+  &.active >span::after {
     @include transition (
-      background 200ms linear, 
-      transform .3s linear .6s, 
-      top .3s linear .15s, 
+      background 200ms linear,
+      transform .3s linear .6s,
+      top .3s linear .15s,
       bottom .3s linear .15s);
   }
 
 
 } //menu-toggle
-    
-  
+
+

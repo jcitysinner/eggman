@@ -8,7 +8,7 @@
   position: relative;
   z-index: 100;
 
-  @include breakpoint($sm-down) { 
+  @include breakpoint($sm-down) {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -16,7 +16,7 @@
   }
 
   a {
-    @include linkcolor($light-blue, darken); 
+    @include linkcolor($light-blue, darken);
   }
 
   .loading {
@@ -37,18 +37,18 @@
 //////// Open State
   &.open {
 
-    @include breakpoint($md-up) { 
+    @include breakpoint($md-up) {
       padding: 0 24px 0 150px;
     }
 
     .status-icon {
 
-      @include breakpoint($sm-down) { 
+      @include breakpoint($sm-down) {
         @include position(absolute, -47px -10px null null);
         height: 48px;
       }
 
-      @include breakpoint($md-up) { 
+      @include breakpoint($md-up) {
         @include position(absolute, null null 0 24px);
         height: 65px;
       }
@@ -56,7 +56,7 @@
       svg {
         fill: $yellow;
 
-        @include breakpoint($md-up) { 
+        @include breakpoint($md-up) {
           fill: $white;
           opacity: .7;
         }
@@ -73,18 +73,18 @@
   &.soon {
     @include background(linear-gradient(-180deg, $yellow 0%, shade($yellow, 20%) 90%));
 
-    @include breakpoint($md-up) { 
+    @include breakpoint($md-up) {
       padding: 0 24px 0 150px;
     }
 
     .status-icon {
 
-      @include breakpoint($sm-down) { 
+      @include breakpoint($sm-down) {
         @include position(absolute, -34px -10px null null);
         height: 35px;
       }
 
-      @include breakpoint($md-up) { 
+      @include breakpoint($md-up) {
         @include position(absolute, null null 0 24px);
         height: 50px;
       }
@@ -93,7 +93,7 @@
         @include animation(sunPop 1.5s $ease-out-quint forwards);
         fill: $yellow;
 
-        @include breakpoint($md-up) { 
+        @include breakpoint($md-up) {
           fill: $white;
           opacity: .5;
         }
@@ -114,7 +114,7 @@
     background-color: $dark-blue;
     color: $white;
 
-    @include breakpoint($md-up) { 
+    @include breakpoint($md-up) {
       padding: 0 24px;
     }
 
@@ -123,7 +123,7 @@
     }
 
     a {
-      @include linkcolor($white, darken); 
+      @include linkcolor($white, darken);
     }
 
   } // closed
@@ -131,7 +131,7 @@
 
 
 
-////// Defualt Icon State 
+////// Defualt Icon State
 
   .status-icon {
     //@include test;
@@ -145,7 +145,7 @@
       @include animation-delay(1s);
       @include transform(translateY(100px));
 
-      @include breakpoint($md-up) { 
+      @include breakpoint($md-up) {
         @include size(100px);
       }
 
@@ -179,15 +179,15 @@
     vertical-align: middle;
     margin: 9px 0;
 
-    @include breakpoint($md-up) { 
+    @include breakpoint($md-up) {
       font-size: 18px;
     }
 
     span {
       display: block;
       font-size: 10px;
-      
-      @include breakpoint($md-up) { 
+
+      @include breakpoint($md-up) {
         font-size: 13px;
       }
     }
@@ -208,7 +208,7 @@
       vertical-align: middle;
       fill: currentColor;
 
-      @include breakpoint($md-up) { 
+      @include breakpoint($md-up) {
         @include size(20px);
         margin-top: -5px;
       }
@@ -225,8 +225,8 @@
       &:nth-child(2) {
         position: relative;
         margin-left: 12px;
-        
-        &:before {
+
+        &::before {
           @include transform(translateY(-50%));
           content: '';
           height: 30%;
@@ -243,7 +243,7 @@
     span {
       margin-left: 12px;
 
-      @include breakpoint($sm-down) { 
+      @include breakpoint($sm-down) {
         display: none;
       }
     }

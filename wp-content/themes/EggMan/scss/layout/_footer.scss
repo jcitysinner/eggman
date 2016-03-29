@@ -27,7 +27,7 @@
     }
   }
 
-  
+
   .meta {
     display: inline-block;
     font-size: 18px;
@@ -36,7 +36,7 @@
     vertical-align: middle;
     padding: 0 24px;
 
-    @include breakpoint($sm-down) { 
+    @include breakpoint($sm-down) {
       width: 100%;
       padding: 12px 24px;
     }
@@ -46,7 +46,7 @@
     }
 
   } // meta
-  
+
 
 
   small {
@@ -66,8 +66,8 @@
     display: inline-block;
     width: 100%;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       @include calc(width, '(100% - 25px - 12px) / 2');
       content: '';
       display: inline-block;

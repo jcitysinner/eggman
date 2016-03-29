@@ -23,7 +23,7 @@
     @include flex-flow(wrap);
     //@include test;
     font-size: 18px;
-    
+
     &.post {
 
       @include break($max: 400px) {
@@ -43,10 +43,10 @@
     background-color: rgba(shade($red, 50%), .5);
     margin-bottom: 2%;
 
-    @include breakpoint($xs) { 
+    @include breakpoint($xs) {
       width: 31.9%;
     }
-    
+
     &:first-child {
       margin-left: 0;
     }
@@ -64,7 +64,7 @@
       margin-left: 6px;
       vertical-align: middle;
     }
-    
+
     &.instagram {
       svg {
         @include position(absolute, null 12px 12px null);
@@ -76,7 +76,7 @@
       padding: 18px;
       overflow: hidden;
 
-      @include breakpoint($md-up) { 
+      @include breakpoint($md-up) {
         width: 49%;
       }
 
@@ -90,7 +90,7 @@
         @include size(24px);
         margin-right: 6px;
       }
-      
+
       .twitter-user {
         display: block;
         margin-top: 18px;

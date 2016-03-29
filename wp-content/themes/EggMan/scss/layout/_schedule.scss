@@ -22,7 +22,7 @@
     width: 100%;
     text-align: right;
   }
-  
+
   a {
     @include linkcolor($red, darken);
     display: block;
@@ -51,11 +51,11 @@
     vertical-align: middle;
 
 
-    @include breakpoint($sm-only) { 
+    @include breakpoint($sm-only) {
       font-size: 40px;
     }
 
-    @include breakpoint($xs) { 
+    @include breakpoint($xs) {
       font-size: 32px;
       margin: 24px 0;
     }
@@ -72,7 +72,7 @@
     width: 70%;
     margin-left: 30%;
 
-    @include breakpoint($md-only) { 
+    @include breakpoint($md-only) {
       margin-left: 10%;
       width: 90%;
     }
@@ -80,7 +80,7 @@
     @include breakpoint($sm-down) {
       margin-left: 0;
       width: 100%;
-    } 
+    }
 
   }
 
@@ -108,7 +108,7 @@
       margin-bottom: 24px;
     }
 
-    &:before {
+    &::before {
       @include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
       right: 0;
       top: 0;

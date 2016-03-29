@@ -13,13 +13,13 @@ $sectioncolor: $dark-blue;
     @include justify-content(space-between);
     @include align-content(space-around);
 
-    @include breakpoint($xs) { 
+    @include breakpoint($xs) {
       display: block;
       padding: 0;
     }
 
   }
-  
+
   a {
     @include linkcolor($yellow, darken);
     font-weight: $heavy;
@@ -28,7 +28,7 @@ $sectioncolor: $dark-blue;
       margin-left: 24px;
     }
   }
-  
+
   svg {
     @include size(15px);
     top: 3px;
@@ -46,11 +46,11 @@ $sectioncolor: $dark-blue;
     text-transform: uppercase;
     font-weight: $book;
 
-    @include breakpoint($sm-only) { 
+    @include breakpoint($sm-only) {
       font-size: 40px;
     }
 
-    @include breakpoint($xs) { 
+    @include breakpoint($xs) {
       font-size: 32px;
       margin: 24px 0;
     }
@@ -71,24 +71,24 @@ $sectioncolor: $dark-blue;
     vertical-align: middle;
     min-width: 130px;
 
-    @include breakpoint($sm-only) { 
+    @include breakpoint($sm-only) {
       font-size: 24px;
       min-width: 100px;
     }
 
-    @include breakpoint($xs) { 
+    @include breakpoint($xs) {
       display: block;
     }
 
   }
-    
+
   span {
     position: relative;
     display: block;
     padding: 18px 24px;
     z-index: 1;
 
-    &:after {
+    &::after {
       z-index: -1;
       content: '';
       position: absolute;
@@ -99,7 +99,7 @@ $sectioncolor: $dark-blue;
     }
 
     @for $i from 1 through 4 {
-      &:nth-child(#{$i}):after {
+      &:nth-child(#{$i})::after {
         background-color: shade($sectioncolor, 10% * $i);
       }
     }
@@ -110,8 +110,8 @@ $sectioncolor: $dark-blue;
     //@include test;
 
     position: relative;
-    
-    @include breakpoint($sm-up) { 
+
+    @include breakpoint($sm-up) {
       @include flex(2);
       @include display(flex);
       @include justify-content(center);
@@ -119,11 +119,11 @@ $sectioncolor: $dark-blue;
       text-align: center;
     }
 
-    @include breakpoint($sm-only) { 
+    @include breakpoint($sm-only) {
       @include flex(1);
     }
-    
-    @include breakpoint($xs) { 
+
+    @include breakpoint($xs) {
       text-align: left;
       display: block;
       padding: 0 24px;
@@ -131,7 +131,7 @@ $sectioncolor: $dark-blue;
     }
 
 
-    &:before {
+    &::before {
       content: '';
       position: absolute;
       right: 0;
@@ -141,7 +141,7 @@ $sectioncolor: $dark-blue;
       background: $sectioncolor;
     }
 
-    
+
   }
 
   .cols {

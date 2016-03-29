@@ -1,4 +1,4 @@
- 
+
 .hero {
   //@include test;
   @include calc(height, '90vh - 80px - 62px - 200px');
@@ -10,11 +10,11 @@
   overflow: hidden;
   //height: 100vh;
 
-  @include breakpoint($sm-down) { 
+  @include breakpoint($sm-down) {
     @include calc(height, '100vh - 70px - 51px - 164px');
   }
 
-  &:after {
+  &::after {
     background-color: $yellow;
     height: 50%;
     content: '';
@@ -44,11 +44,11 @@
     font-weight: $book;
     text-align: center;
 
-    @include breakpoint($sm-only) { 
+    @include breakpoint($sm-only) {
       font-size: 60px;
     }
 
-    @include breakpoint($xs) { 
+    @include breakpoint($xs) {
       font-size: 45px;
     }
 
@@ -63,7 +63,7 @@
       opacity: .8;
       line-height: .7em;
 
-      @include breakpoint($xs) { 
+      @include breakpoint($xs) {
         font-size: .4em;
       }
     }

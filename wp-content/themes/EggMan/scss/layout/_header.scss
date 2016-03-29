@@ -12,9 +12,9 @@
     width: 247px;
     height: 30px;
 
-    @include breakpoint($md-up) { 
+    @include breakpoint($md-up) {
       height: 40px;
     }
   }
 
-} 
+}

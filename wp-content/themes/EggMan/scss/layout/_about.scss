@@ -2,7 +2,7 @@
 .about {
   color: $white;
   overflow: hidden;
-  
+
   img {
     display: none;
   }
@@ -29,12 +29,12 @@
     font-weight: $book;
     border-top: 1px solid tint($red, 10%);
     padding-top: 18px;
-    
-    @include breakpoint($sm-only) { 
+
+    @include breakpoint($sm-only) {
       font-size: 24px;
     }
 
-    @include breakpoint($xs) { 
+    @include breakpoint($xs) {
       font-size: 24px;
     }
 
@@ -61,7 +61,7 @@
     color: $white;
     padding: 24px;
 
-    &:after {
+    &::after {
       z-index: -1;
       content: '';
       position: absolute;
@@ -70,21 +70,21 @@
       width: 300%;
     }
 
-    &:nth-child(1):after {
+    &:nth-child(1)::after {
       right: 0;
     }
 
-    &:nth-child(2):after {
+    &:nth-child(2)::after {
       left: 0;
       right: 0;
     }
 
-    &:nth-child(3):after {
+    &:nth-child(3)::after {
       left: 0;
     }
 
     @for $i from 1 through 3 {
-      &:nth-child(#{$i}):after {
+      &:nth-child(#{$i})::after {
         background-color: shade($red, 5% * $i);
       }
     }
@@ -115,7 +115,7 @@
     font-size: 14px;
     margin: 24px auto;
   }
-  
+
   .pre_target {
     h1 {
       @include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
@@ -129,11 +129,11 @@
       font-weight: $book;
       line-height: .9em;
 
-      @include breakpoint($sm-only) { 
+      @include breakpoint($sm-only) {
         font-size: 40px;
       }
 
-      @include breakpoint($xs) { 
+      @include breakpoint($xs) {
         font-size: 32px;
       }
     }
@@ -145,7 +145,7 @@
       left: 0;
       z-index: 10;
 
-      @include breakpoint($sm-down) { 
+      @include breakpoint($sm-down) {
         display: none;
       }
     }
@@ -158,7 +158,7 @@
       font-size: 18px;
       color: $white;
 
-      @include breakpoint($sm-down) { 
+      @include breakpoint($sm-down) {
         width: 100%;
         margin: 0;
       }
@@ -177,7 +177,7 @@
   //@include test;
   margin: 0 auto;
   max-width: 800px;
-  
+
   padding: 12px;
   border: 1px solid $black;
   background-color: rgba($black, .7);
@@ -191,7 +191,7 @@
     width: 30%;
     display: inline-block;
   }
-  
+
   .col_2 {
     //@include test;
     width: 60%;
@@ -201,7 +201,7 @@
     display: inline-block;
     color: $white;
 
-    @include breakpoint($md-down) { 
+    @include breakpoint($md-down) {
       margin-left: 12px;
     }
   }
@@ -214,8 +214,8 @@
     text-transform: uppercase;
     font-weight: $book;
     padding-top: 6px;
-    
-    @include breakpoint($sm-down) { 
+
+    @include breakpoint($sm-down) {
       font-size: 24px;
     }
   }
@@ -228,8 +228,8 @@
     text-transform: uppercase;
     font-weight: $book;
     padding-top: 6px;
-    
-    @include breakpoint($sm-down) { 
+
+    @include breakpoint($sm-down) {
       font-size: 14px;
     }
   }

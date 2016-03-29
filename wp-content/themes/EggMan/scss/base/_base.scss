@@ -7,7 +7,7 @@ body {
   -webkit-font-smoothing: antialiased !important;
 
 
-  &:after {
+  &::after {
     position: fixed;
     bottom: 0;
     right: 0;
@@ -45,9 +45,9 @@ body {
 .wrapper {
   max-width: 1178px;
   margin: 0 auto;
-  padding: 0 24px; 
+  padding: 0 24px;
   position: relative;
-} 
+}
 
 .sprite-hide {
   width: 0;

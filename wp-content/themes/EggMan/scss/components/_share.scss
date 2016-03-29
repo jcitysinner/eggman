@@ -26,16 +26,16 @@
     @include break($max: 600px) {
       display: none;
     }
-    
+
   }
-  
+
   .accounts {
     //@include test;
     text-transform: uppercase;
     text-align: center;
     display: inline-block;
 
-    @include break($max: 399px) { 
+    @include break($max: 399px) {
       display: block;
     }
 
@@ -54,7 +54,7 @@
       @include break($min: 400px) {
         margin-right: 24px;
       }
-      
+
       @include break($max: 400px) {
         width: 100%;
         font-size: 13px;
@@ -70,7 +70,7 @@
       vertical-align: middle;
     } //svg
 
-    a:not(:first-of-type) { 
+    a:not(:first-of-type) {
       margin-left: 18px;
     }
 

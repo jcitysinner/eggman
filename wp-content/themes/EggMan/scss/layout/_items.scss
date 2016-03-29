@@ -11,7 +11,7 @@
     top: 15px;
     right: 20px;
     cursor: pointer;
-    color: $red; 
+    color: $red;
     z-index: 100;
     background-color: $white;
     border-radius: 30px;
@@ -28,14 +28,14 @@
       fill: currentColor;
     }
   }
-  
+
   .money_shot {
     height: 400px;
     background-position: center center;
     background-size: cover;
     border-bottom: 1px solid $light-blue;
 
-    @include breakpoint($sm-down) { 
+    @include breakpoint($sm-down) {
       height: 0;
       background-image: none;
       display: none;
@@ -46,17 +46,17 @@
     @include clearfix;
     @include padding(48px null 48px null);
 
-    @include breakpoint($sm-down) { 
+    @include breakpoint($sm-down) {
       @include padding(24px null 24px null);
     }
   }
-  
+
   .col_1 {
     //@include test;
     width: 48%;
     display: inline-block;
 
-    @include breakpoint($sm-down) { 
+    @include breakpoint($sm-down) {
       width: 100%;
     }
 
@@ -106,7 +106,7 @@
       //@include test;
       display: table-cell;
       padding: 12px;
-      
+
       small {
         font-size: 10px;
         font-weight: $medium;
@@ -181,15 +181,15 @@
     display: inline-block;
     float: right;
 
-    @include breakpoint($sm-down) { 
+    @include breakpoint($sm-down) {
       width: 100%;
       float: none;
       margin-bottom: 48px;
     }
-    
+
     img {
       display: block;
-      max-width: 300px; 
+      max-width: 300px;
       margin: 0 auto;
     }
 

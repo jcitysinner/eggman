@@ -15,7 +15,7 @@
     overflow: visible;
     text-align: center;
     vertical-align: top;
-    
+
 
     @include breakpoint($md-up) {
       display: inline-block;
@@ -35,7 +35,7 @@
       white-space: nowrap;
       margin-top: -.1em;
       font-weight: $book;
-      
+
       @include breakpoint($md-up) {
         width: 120%;
       }
@@ -69,7 +69,7 @@
     text-align: left;
     margin-top: 24px;
     display: none;
-    
+
     @include breakpoint($md-up) {
       @include calc(width, '100% - 480px');
       display: inline-block;
@@ -80,7 +80,7 @@
       padding-right: 150px;
       position: relative;
     }
-    
+
     .img-wrap {
       position: absolute;
       right: 0;
@@ -97,7 +97,7 @@
         @include transform(scale(.3) rotate(5deg));
         @include transform-origin(right top);
         // scss-lint:disable all
-        cursor: -webkit-zoom-in; 
+        cursor: -webkit-zoom-in;
         cursor: -moz-zoom-in;
         // scss-lint:enable all
         max-width: 100%;
@@ -157,7 +157,7 @@
 
     }
 
-  } 
+  }
 
 }
 

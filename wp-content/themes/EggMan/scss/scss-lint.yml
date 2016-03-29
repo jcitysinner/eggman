@@ -26,12 +26,12 @@ linters:
     enabled: false
 
   ElsePlacement:
-    enabled: true
+    enabled: false
     style: same_line
 
   EmptyLineBetweenBlocks:
     enabled: true
-    ignore_single_line_blocks: false
+    ignore_single_line_blocks: true
 
   EmptyRule:
     enabled: true

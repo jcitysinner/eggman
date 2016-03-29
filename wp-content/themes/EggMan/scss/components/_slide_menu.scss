@@ -10,11 +10,11 @@
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 2.2px;
-    text-align: center; 
+    text-align: center;
     padding: 0;
     margin: 0;
 
-    @include breakpoint($sm-down) { 
+    @include breakpoint($sm-down) {
       display: none;
     }
   }
@@ -45,7 +45,7 @@
     margin: 0 6px;
     cursor: pointer;
     position: relative;
-    
+
 
     @include breakpoint($md-up) {
       width: 130px;
@@ -63,12 +63,12 @@
 
     &:last-of-type {
       margin-right: 12px;
-      
+
       @include breakpoint($md-up) {
         margin-right: 36px;
       }
     }
-  
+
     &.active {
       @include transform(scale(1.1));
     }
@@ -143,8 +143,8 @@
 } // menuarrow
 
 
-.menu_target { 
-  border-top: 1px solid $light-blue;  
+.menu_target {
+  border-top: 1px solid $light-blue;
   border-bottom: 1px solid $light-blue;
 }
 
