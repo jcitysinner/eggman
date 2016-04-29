@@ -57,9 +57,6 @@ $data = '
     <div class="close">
       <svg><use xlink:href="#icon-close"></use></svg>
     </div>
-
-    <div class="money_shot" style="background-image:url('.$money.');"></div>
-
     <div class="wrapper">
 
       <div class="col_2">
@@ -67,16 +64,17 @@ $data = '
       </div>
 
       <div class="col_1">
-        <h1>'.get_the_title().'</h1>
-        <h2>'.$sub.'</h2>
+        <h1>'.$sub.'</h1>
+        <h2>'.get_the_title().'</h2>
         <div class="content">
         '.get_the_content_with_formatting().'
         </div>
-        '.$price.'<h3>Nutritional Information</h3>
-        '.$base_string.'
-        <div class="table">'.$cal_string.$carb_string.$fat_string.$sodium_string.'</div>
+        '.$price.'
       </div>
-    </div>';
+    </div>
+
+
+      <div class="money_shot" style="background-image:url('.$money.');"></div>';
   endwhile; endif; 
   wp_reset_postdata();
   echo '<article class="item_single">'.$data.'</article>';
