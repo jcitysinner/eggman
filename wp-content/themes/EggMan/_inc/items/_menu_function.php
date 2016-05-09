@@ -64,17 +64,12 @@ $data = '
       </div>
 
       <div class="col_1">
-        <h1>'.$sub.'</h1>
         <h2>'.get_the_title().'</h2>
         <div class="content">
         '.get_the_content_with_formatting().'
         </div>
-        '.$price.'
       </div>
-    </div>
-
-
-      <div class="money_shot" style="background-image:url('.$money.');"></div>';
+    </div>';
   endwhile; endif; 
   wp_reset_postdata();
   echo '<article class="item_single">'.$data.'</article>';
