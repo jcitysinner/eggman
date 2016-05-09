@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 
 
-$('.twitter-wrapper .twitter:last-child').prev('div').andSelf().appendTo(".twitter-wrapper.post");;
+$('.twitter-wrapper .twitter:last-child').prev('div').andSelf().appendTo(".twitter-wrapper.post");
 
 
 
@@ -110,27 +110,6 @@ $('.meet').click(function() {
 
 
 
-  // $.ajax({
-    
-  //   url: "http://data.streetfoodapp.com/1.1/vendors/egg-man",
-  //   dataType: 'jsonp',
-  //   success: function(results){
-  //       console.log(results);
-  //   }
-
-  // });
-
-
-  //  $.ajax({
-  //     dataType: "JSONP",
-  //     url: "http://data.streetfoodapp.com/1.1/vendors/egg-man",
-  //     success: function(data) {
-  //         console.log(data);
-  //     },
-  //     error: function(error) {
-  //         console.log(error);
-  //     }
-  // });
 
   function setOpen(data) {
 
@@ -176,33 +155,21 @@ $('.meet').click(function() {
 
         if (thisDateOpenHour > 12) {
           thisDateOpenHour = thisDateOpenHour - 12 + 'PM';
-
         } else if (thisDateOpenHour === 0) {
-
           thisDateOpenHour = '12AM';
-
         } else {
-
           thisDateOpenHour = thisDateOpenHour + 'AM';
         }
-
         if (thisDateCloseHour > 12) {
           thisDateCloseHour = thisDateCloseHour - 12 + 'PM';
         } else if (thisDateCloseHour === 0) {
-
           thisDateCloseHour = '12AM';
-
         } else {
-
           thisDateCloseHour = thisDateCloseHour + 'AM';
-
         }
-
         var html = $('.schedule dl').html() + '<dt>'+ thisDateMonth +' '+ thisDateDate +'</dt> <dd> <div><strong>'+thisDateOpenHour+' - '+thisDateCloseHour+'</strong>'+data.open[i].display+'<a href="http://maps.google.com/maps?z=18&q='+ thisLat +',' + thisLong +'"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a></div> </dd>';
-
         $('.schedule dl').html(html);
-
-      }
+      } 
 
         //console.log(currentOpen);
         //console.log(currentClose);
@@ -274,6 +241,9 @@ $('.meet').click(function() {
       $('#status-copy').html('<span>Currently Closed</span>Sorry, we\'re is closed right now!');
       $('.status .loading').remove();
 
+           var html = $('.schedule dl').html() + '<dt>THIS WEEKS SCHEDULE WILL BE POSTED SHORTLY.</dt> <dd></dd>';
+        $('.schedule dl').html(html);
+
     }
 
 
@@ -284,11 +254,10 @@ $('.meet').click(function() {
       dataType: "jsonp",
       url: themeurl + "/_objects/jsonp-wrapper.php",
       success: function(data) {
-          setOpen(data);
-          
+        setOpen(data); 
       },
       error: function(error) {
-          console.log(error);
+        console.log(error);
       }
   });
 
