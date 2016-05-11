@@ -35,43 +35,6 @@ function items_metaboxes()
         ),
 
         array(
-          'name'    => 'Calories',
-          'desc'    => '',
-          'id'      => $prefix.'cal',
-          'type'    => 'text' 
-        ),
-
-
-        array(
-          'name'    => 'Carbs (G)',
-          'desc'    => '',
-          'id'      => $prefix.'carb',
-          'type'    => 'text' 
-        ),
-
-        array(
-          'name'    => 'Total Fat (G)',
-          'desc'    => '',
-          'id'      => $prefix.'fat',
-          'type'    => 'text' 
-        ),
-
-        array(
-          'name'    => 'Sodium (MG)',
-          'desc'    => '',
-          'id'      => $prefix.'sodium',
-          'type'    => 'text' 
-        ),
-
-
-        array(
-          'name'    => 'Based on',
-          'desc'    => '',
-          'id'      => $prefix.'base',
-          'type'    => 'text' 
-        ),        
-
-        array(
           'name'    => 'SubTitle',
           'desc'    => '',
           'id'      => $prefix.'sub',
