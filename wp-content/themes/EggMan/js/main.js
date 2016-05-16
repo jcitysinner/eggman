@@ -180,6 +180,14 @@ function timeConverter(UNIX_timestamp){
 
     var schedule = false;
     var months = ['Jan','Feb','March','April','May','June','July','Aug','Sept','Oct','Nov','Dec'];
+    var weekday = new Array(7);
+      weekday[0]=  "Sunday";
+      weekday[1] = "Monday";
+      weekday[2] = "Tuesday";
+      weekday[3] = "Wednesday";
+      weekday[4] = "Thursday";
+      weekday[5] = "Friday";
+      weekday[6] = "Saturday";
 
     if (data.open.length) {
       schedule = true;
@@ -225,13 +233,17 @@ function timeConverter(UNIX_timestamp){
       var currentClose =  new Date(data.open[0].end*1000).getHours();
       var currentOpenMin = new Date(data.open[0].start*1000).getMinutes();
       var currentCloseMin =  new Date(data.open[0].end*1000).getMinutes();
+      var currentOpenWD = weekday[ new Date(data.open[0].start*1000).getDay() ];
+
+ 
+
       var thisLatN = data.open[0].latitude;
       var thisLongN = data.open[0].longitude;
       info = data.open[0].display;
 
 
       if (data.open[0].start > currentTime && data.open[0].end > currentTime ){
-        $('#status-copy').html('<span>Currently Closed. Will be open at '+checkHour(currentOpen)+checkMin(currentOpenMin)+checkPAM(currentOpen)+ '</span>' + info);
+        $('#status-copy').html('<span>Currently Closed. Will be open '+currentOpenWD+', '+checkHour(currentOpen)+checkMin(currentOpenMin)+checkPAM(currentOpen)+ '</span>' + info);
         $('.status .controls').prepend('<a href="http://maps.google.com/maps?z=18&q='+ thisLatN +',' + thisLongN +'"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a>');
         $('.status .loading').remove();
       }
