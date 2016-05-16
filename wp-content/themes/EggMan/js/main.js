@@ -138,6 +138,19 @@ $('.meet').click(function() {
 //
 //
 
+function timeConverter(UNIX_timestamp){
+  var a = new Date(UNIX_timestamp * 1000);
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var year = a.getFullYear();
+  var month = months[a.getMonth()];
+  var date = a.getDate();
+  var hour = a.getHours();
+  var min = a.getMinutes();
+  var sec = a.getSeconds();
+  var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+  return time;
+}
+
   function checkMin(data) {
     if (data.toString().length > 1) {
       return ':'+data;
@@ -202,147 +215,53 @@ $('.meet').click(function() {
     }
 
 
+    if (schedule) {
+
+      var status = false;
+      var currentTime = Date.now()/1000;
+      var currentTimePlus = currentTime + (12*60*60) ;
+      var info;
+      var currentOpen = new Date(data.open[0].start*1000).getHours();
+      var currentClose =  new Date(data.open[0].end*1000).getHours();
+      var currentOpenMin = new Date(data.open[0].start*1000).getMinutes();
+      var currentCloseMin =  new Date(data.open[0].end*1000).getMinutes();
+      var thisLatN = data.open[0].latitude;
+      var thisLongN = data.open[0].longitude;
+      info = data.open[0].display;
+
+
+      if (data.open[0].start > currentTime && data.open[0].end > currentTime ){
+        $('#status-copy').html('<span>Currently Closed. Will be open at '+checkHour(currentOpen)+checkMin(currentOpenMin)+checkPAM(currentOpen)+ '</span>' + info);
+        $('.status .controls').prepend('<a href="http://maps.google.com/maps?z=18&q='+ thisLatN +',' + thisLongN +'"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a>');
+        $('.status .loading').remove();
+      }
+
+      if (data.open[0].start < currentTimePlus  ){
+        $('#status-copy').html('<span> Will be open at '+checkHour(currentOpen)+checkMin(currentOpenMin)+checkPAM(currentOpen)+  '</span>' + info);
+        $('.status .controls').prepend('<a href="http://maps.google.com/maps?z=18&q='+ thisLatN +',' + thisLongN +'"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a>');
+        $('.status .loading').remove();
+        $('.status').addClass('soon');
+        $('.status').removeClass('closed');
+      }
+
+      if (data.open[0].start < currentTime && data.open[0].end > currentTime ){
+        $('#status-copy').html('<span>Open Now Until '+checkHour(currentClose)+checkMin(currentCloseMin)+checkPAM(currentClose)+ '</span>' + info);
+        $('.status .controls').prepend('<a href="http://maps.google.com/maps?z=18&q='+ thisLatN +',' + thisLongN +'"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a>');
+        $('.status .loading').remove();
+        $('.status').addClass('open');
+        $('.status').removeClass('closed');
+      }
+
+    } else {
+
+      $('#status-copy').html('<span>Currently Closed</span>Sorry, we\'re is closed right now!');
+      $('.status .loading').remove();
+
+    }
 
 
 
   }
-
-
-  // function setOpen(data) {
-
-  //   var schedule = false;
-
-  //   if (data.open.length) {
-  //     schedule = true;
-  //   } else {
-  //     schedule = false;
-  //   }
-
-  //   console.log(schedule);
-
-
-  //   if (schedule) {
-  //     var currentOpen = 0;
-  //     var currentClose = 0;
-  //     var soon = false;
-  //     var currentTime = Date.now();
-  //     var info;
-  //     var months = ['Jan','Feb','March','April','May','June','July','Aug','Sept','Oct','Nov','Dec'];
-
-  //     for (i = 0; i < data.open.length; i++) {
-  //       if (data.open[i].start < currentTime && data.open[i].end > currentTime) {
-  //         currentClose = data.open[i].end;
-  //         info = data.open[i].display;
-  //         soon = true;
-  //       } else if (data.open[i].start > currentTime && soon === false) {
-  //         currentClose = data.open[i].end;
-  //         currentOpen = data.open[i].start;
-  //         info = data.open[i].display;
-  //         soon = true;
-  //       }
-
-  //       var thisDateOpen = new Date(data.open[i].start*1000);
-  //       var thisDateClose =  new Date(data.open[i].end*1000);
-  //       var thisDateMonth = months[thisDateOpen.getMonth()];
-  //       var thisDateDate = thisDateOpen.getDate();
-  //       var thisDateOpenHour = thisDateOpen.getHours();
-  //       var thisDateCloseHour = thisDateClose.getHours();
-  //       var thisLat = data.open[i].latitude;
-  //       var thisLong = data.open[i].longitude;
-
-  //       if (thisDateOpenHour > 12) {
-  //         thisDateOpenHour = thisDateOpenHour - 12 + 'PM';
-  //       } else if (thisDateOpenHour === 0) {
-  //         thisDateOpenHour = '12AM';
-  //       } else {
-  //         thisDateOpenHour = thisDateOpenHour + 'AM';
-  //       }
-  //       if (thisDateCloseHour > 12) {
-  //         thisDateCloseHour = thisDateCloseHour - 12 + 'PM';
-  //       } else if (thisDateCloseHour === 0) {
-  //         thisDateCloseHour = '12AM';
-  //       } else {
-  //         thisDateCloseHour = thisDateCloseHour + 'AM';
-  //       }
-  //       var html = $('.schedule dl').html() + '<dt>'+ thisDateMonth +' '+ thisDateDate +'</dt> <dd> <div><strong>'+thisDateOpenHour+' - '+thisDateCloseHour+'</strong>'+data.open[i].display+'<a href="http://maps.google.com/maps?z=18&q='+ thisLat +',' + thisLong +'"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a></div> </dd>';
-  //       $('.schedule dl').html(html);
-  //     }
-
-
-  //     if (currentClose === 0) {
-
-  //       $('#status-copy').html('<span>Currently Closed</span>Sorry, we\'re is closed right now!');
-
-  //     } else if(currentOpen !== 0){
-
-  //       var date = new Date(currentOpen*1000);
-  //       var hours = date.getHours();
-  //       var closeDate = new Date(currentClose*1000);
-  //       var closeHours = closeDate.getHours();
-
-  //       if (hours > 12) {
-  //         hours = hours - 12 + 'PM';
-  //       } else if (hours === 0) {
-  //         hours = '12AM';
-  //       } else {
-  //         hours = hours + 'AM';
-  //       }
-
-  //       if (closeHours > 12) {
-  //         closeHours = closeHours - 12 + 'PM';
-  //       } else if (closeHours === 0) {
-  //         closeHours = '12AM';
-  //       } else {
-  //         closeHours = closeHours + 'AM';
-  //       }
-
-  //       $('#status-copy').html('<span>Will be open at ' + hours + ' until ' + closeHours + '</span>' + info);
-  //       $('.status').removeClass('closed');
-  //       $('.status').addClass('soon');
-  //       $('.status .controls').prepend('<a href="http://maps.google.com/maps?z=18&q='+ thisLat +',' + thisLong +'"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a>');
-  //       $('.status .loading').remove();
-
-  //     } else {
-
-  //       var date = new Date(currentClose*1000);
-  //       var hours = date.getHours();
-
-  //       if (hours > 12) {
-
-  //         hours = hours - 12 + 'PM';
-
-  //       } else if (hours === 0) {
-
-  //         hours = '12AM';
-
-  //       } else {
-
-  //         hours = hours + 'AM';
-
-  //       }
-
-  //       $('#status-copy').html('<span>Open Now Until ' + hours + '</span>' + info);
-  //       $('.status').removeClass('closed');
-  //       $('.status').addClass('open');
-  //       $('.status .controls').prepend('<a href="http://maps.google.com/maps?z=18&q='+ thisLat +',' + thisLong +'"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a>');
-  //       $('.status .loading').remove();
-
-
-
-  //     }
-
-  //   } else {
-
-  //     $('#status-copy').html('<span>Currently Closed</span>Sorry, we\'re is closed right now!');
-  //     $('.status .loading').remove();
-
-  //     var html = $('.schedule dl').html() + '<dt>THIS WEEKS SCHEDULE WILL BE POSTED SHORTLY.</dt> <dd></dd>';
-  //     $('.schedule dl').html(html);
-
-  //   }
-
-
-  // }
 
 
   $.ajax({
