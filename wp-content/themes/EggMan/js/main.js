@@ -2,12 +2,41 @@ $(document).ready(function() {
 
 
 
+//
+// Open/Close Contact form
+//
+//
+
+  $("#contact-open-trigger").click(function(e) {
+    e.preventDefault();
+    $('body').css('overflow-y', 'hidden');
+    $('.contact-form-wrap').fadeIn();
+  });
+
+  $("#contact-close").click(function(e) {
+    e.preventDefault();
+    $('body').css('overflow-y', 'auto');
+    $('.contact-form-wrap').fadeOut();
+  });
+
+//
+// Scroll to Schedule
+//
+//
+
+  $('#schedule-trigger').click(function(e) {
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $(".schedule").offset().top
+    }, 700);
+  });
 
 
-
+//
+// Moves twitter posts around Insta
+//
+//
 $('.twitter-wrapper .twitter:last-child').prev('div').andSelf().appendTo(".twitter-wrapper.post");
-
-
 
 
 //
@@ -24,18 +53,16 @@ $('.twitter-wrapper .twitter:last-child').prev('div').andSelf().appendTo(".twitt
       var mdata = $(this).html();
       $('.press ul .last').fadeOut( "slow", function() {
         $(".press ul").append(mdata);
-      }); 
+      });
     });
 
   });
-
 
 
 //
 // Pulls in menu items via ajax
 // Fucntion located in _inc / items / _menu_functions.php
 //
-
 
 $('.type-items').click(function() {
   var postid = $(this).attr('data-postid');
@@ -44,12 +71,12 @@ $('.type-items').click(function() {
     action: 'menu_item', // Call function
     post_id: postid // Pass post id data
   };
- 
+
   if (!$(this).hasClass('active')) {
     $('.item.active').removeClass('active');
     $(this).toggleClass('active');
     $(this).append( '<div class="loading"><svg><use xlink:href="#egg-cross"></use></svg></div>' );
-    
+
     $.post(ajaxurl, data, function(response){
       $container.html(response);
       //console.log(response);
@@ -71,15 +98,12 @@ $(".menu_target").on("click", ".close", function() {
   $(".menu_target").slideUp().removeClass('open');
 });
 
-// End Menu Ajax Call
 
 
 //
 // Pulls in Staff items via ajax
-// Fucntion located in 
+// Fucntion located in
 //
-
-
 $('.meet').click(function() {
   var $container = $(".team_target");
   var data = {
@@ -93,23 +117,26 @@ $('.meet').click(function() {
 
  var currentHeight = $('.team').outerHeight();
  $('.team').css("min-height",currentHeight + "px");
-    
+
     $.post(ajaxurl, data, function(response){
       $('.pre_target').fadeOut( "slow", function() {
         $(".pre_target").remove();
         $container.html(response);
         $container.slideDown();
-      }); 
+      });
       //console.log(response);
     });
   return false;
 });
 
 
-// End Menu Ajax Call
 
 
 
+//
+// Check Schedule
+//
+//
 
   function setOpen(data) {
 
@@ -137,7 +164,7 @@ $('.meet').click(function() {
           currentClose = data.open[i].end;
           info = data.open[i].display;
           soon = true;
-        } else if (data.open[i].start > currentTime && soon == false) {
+        } else if (data.open[i].start > currentTime && soon === false) {
           currentClose = data.open[i].end;
           currentOpen = data.open[i].start;
           info = data.open[i].display;
@@ -169,7 +196,7 @@ $('.meet').click(function() {
         }
         var html = $('.schedule dl').html() + '<dt>'+ thisDateMonth +' '+ thisDateDate +'</dt> <dd> <div><strong>'+thisDateOpenHour+' - '+thisDateCloseHour+'</strong>'+data.open[i].display+'<a href="http://maps.google.com/maps?z=18&q='+ thisLat +',' + thisLong +'"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a></div> </dd>';
         $('.schedule dl').html(html);
-      } 
+      }
 
         //console.log(currentOpen);
         //console.log(currentClose);
@@ -241,8 +268,8 @@ $('.meet').click(function() {
       $('#status-copy').html('<span>Currently Closed</span>Sorry, we\'re is closed right now!');
       $('.status .loading').remove();
 
-           var html = $('.schedule dl').html() + '<dt>THIS WEEKS SCHEDULE WILL BE POSTED SHORTLY.</dt> <dd></dd>';
-        $('.schedule dl').html(html);
+      var html = $('.schedule dl').html() + '<dt>THIS WEEKS SCHEDULE WILL BE POSTED SHORTLY.</dt> <dd></dd>';
+      $('.schedule dl').html(html);
 
     }
 
@@ -254,7 +281,7 @@ $('.meet').click(function() {
       dataType: "jsonp",
       url: themeurl + "/_objects/jsonp-wrapper.php",
       success: function(data) {
-        setOpen(data); 
+        setOpen(data);
       },
       error: function(error) {
         console.log(error);
@@ -264,36 +291,7 @@ $('.meet').click(function() {
 
 
 
-//
-// Open/Close Contact form
-// 
-//
 
-  $("#contact-open-trigger").click(function(e) {
-    e.preventDefault();
-    $('body').css('overflow-y', 'hidden');
-    $('.contact-form-wrap').fadeIn();
-  });
-
-  $("#contact-close").click(function(e) {
-    e.preventDefault();
-    $('body').css('overflow-y', 'auto');
-    $('.contact-form-wrap').fadeOut();
-  });
-
-
-//
-// Scroll to Schedule
-// 
-//
-
-  $('#schedule-trigger').click(function(e) {
-    e.preventDefault();
-    $('html, body').animate({
-        scrollTop: $(".schedule").offset().top
-    }, 700);
-  });
-  
 
 });
 
